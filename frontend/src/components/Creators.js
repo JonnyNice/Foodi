@@ -1,8 +1,9 @@
 import React from 'react'
+import CreatorList from "./CreatorList"
 
 const Creators = () => {
   return (
-    <div>Creators</div>
+    <CreatorList />
   )
 }
 

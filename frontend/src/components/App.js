@@ -1,6 +1,5 @@
 import '../App.css';
 import React, { useEffect, useState } from "react";
-import RecipeList from "./RecipeList"
 import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
@@ -25,6 +24,9 @@ function App() {
         <Switch>
           <Route path="/recipes" >
             <Recipes />
+          </Route>
+          <Route path="/creators" >
+            <Creators />
           </Route>
           <Route path="/search">
             <Search />
