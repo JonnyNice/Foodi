@@ -14,6 +14,9 @@ const NavBar = () => {
       <NavLink className="navItem" to="/recipes" exact>
         Recipes
       </NavLink>
+      <NavLink className="navItem" to="/creators" exact>
+        Creators
+      </NavLink>
       <NavLink className="navItem" to="/about" exact>
         About
       </NavLink>
