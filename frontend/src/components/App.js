@@ -8,6 +8,8 @@ import Creators from "./Creators"
 import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
+import Header from "./Header";
+import "./NavBar.css"
 
 function App() {
 
@@ -15,14 +17,30 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:9292/recipes")
-      .then((r) => r.json())
-      .then((recipes) => setRecipes(recipes));
+    .then((r) => r.json())
+    .then((recipes) => setRecipes(recipes));
   }, []);
 
+
+
+  // Jason's code
+  const [sidebarOpen, setSideBarOpen] = useState(false);
+
+  const handleViewSidebar = () => {
+    setSideBarOpen(!sidebarOpen);
+  };
+
+
+
+
+  
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
+      <span>
+      <Header onClick={handleViewSidebar} />
         <Switch>
+      <NavBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar} />
           <Route path="/recipes" >
             <Recipes />
           </Route>
@@ -36,6 +54,7 @@ function App() {
             <Home recipes={recipes} />
           </Route>
         </Switch>
+    </span>
     </div>
   );
 }

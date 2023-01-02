@@ -2,9 +2,14 @@ import React from 'react'
 import { NavLink } from "react-router-dom"
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  const sidebarClass = props.isOpen ? "sidebar open" : "sidebar";
+
+
+
   return (
-    <div className="navBar">
+    <div className={sidebarClass}>
       <NavLink id="first_item" to="/" exact>
         RecipeApp🎂
       </NavLink>
