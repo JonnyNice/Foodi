@@ -20,32 +20,23 @@ function App() {
   }, []);
 
   return (
-    <>
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello World</h1>
-        <RecipeList recipes={recipes}/>
-      </header>
-    </div>
     <div>
       <NavBar />
-      <Switch>
-            <Route path="/recipes" >
-              <Recipes  />
-            </Route>
-            <Route path="/search">
-              <Search />
-            </Route>
-            <Route path= "/about">
-              <About />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-          </Switch>
-
+        <Switch>
+          <Route path="/recipes" >
+            <Recipes />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path= "/about">
+            <About />
+          </Route>
+          <Route exact path="/">
+            <Home recipes={recipes} />
+          </Route>
+        </Switch>
     </div>
-    </>
   );
 }
 
