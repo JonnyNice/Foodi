@@ -27,7 +27,6 @@ c5 = Comment.create(comment: "my family was all food poisoned", rating: 1, creat
 c6 = Comment.create(comment: "killed my uncle, 10/10", rating: 5, creator: cr1, recipe: r4)
 c7 = Comment.create(comment: "tasted like feet, loved it", rating: 5, creator: cr3, recipe: r6)
 
-
 binding.pry
 
 puts "✅ Done seeding!"
