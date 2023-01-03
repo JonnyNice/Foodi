@@ -43,7 +43,7 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 
 export default function NavBar() {
 
-  const [open, setopen] = useState(true)
+  const [open, setopen] = useState(false)
     const toggleOpen = () => {
         setopen(!open)
     }
