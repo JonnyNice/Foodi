@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
@@ -10,13 +10,6 @@ import Home from "./Home"
 
 function App() {
 
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:9292/recipes")
-      .then((r) => r.json())
-      .then((recipes) => setRecipes(recipes));
-  }, []);
 
   return (
     <div>
@@ -35,7 +28,7 @@ function App() {
             <About />
           </Route>
           <Route exact path="/">
-            <Home recipes={recipes} />
+            <Home  />
           </Route>
         </Switch>
     </div>

@@ -26,7 +26,7 @@ function CreatorCard({creator}) {
       </CardContent>
       <CardActions>
         <Button size="small">Recipes</Button>
-        <Button size="small">Learn More</Button>
+        {/* <Button size="small">Learn More</Button> */}
       </CardActions>
     </Card>
     </div>

@@ -1,0 +1,5 @@
+.recipe_container {
+    padding: 25px;
+    padding-bottom: 100px;
+    display: inline-grid;
+}
