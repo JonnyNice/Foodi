@@ -50,3 +50,15 @@ code {
     transform: rotate(360deg);
   }
 }
+body {
+    margin: 0;
+    padding: 0;
+  }
+   
+  .App {
+    display: flex;
+  }
+   
+  main {
+    padding: 10px;
+  }

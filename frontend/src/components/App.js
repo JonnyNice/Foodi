@@ -2,14 +2,14 @@ import '../App.css';
 import React, { useEffect, useState } from "react";
 import RecipeList from "./RecipeList"
 import NavBar from "./NavBar"
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Routes } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
 import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
 import Header from "./Header";
-import "./NavBar.css"
+// import "./NavBar.css"
 
 function App() {
 
@@ -24,23 +24,21 @@ function App() {
 
 
   // Jason's code
-  const [sidebarOpen, setSideBarOpen] = useState(false);
+  // const [sidebarOpen, setSideBarOpen] = useState(false);
 
-  const handleViewSidebar = () => {
-    setSideBarOpen(!sidebarOpen);
-  };
+  // const handleViewSidebar = () => {
+  //   setSideBarOpen(!sidebarOpen);
+  // };
 
 
 
 
   
   return (
-    <div>
-      {/* <NavBar /> */}
-      <span>
-      <Header onClick={handleViewSidebar} />
+    <div className="App">
+      <NavBar />
+     <main>
         <Switch>
-      <NavBar isOpen={sidebarOpen} toggleSidebar={handleViewSidebar} />
           <Route path="/recipes" >
             <Recipes />
           </Route>
@@ -54,7 +52,7 @@ function App() {
             <Home recipes={recipes} />
           </Route>
         </Switch>
-    </span>
+        </main>
     </div>
   );
 }
