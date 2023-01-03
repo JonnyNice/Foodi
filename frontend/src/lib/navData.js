@@ -45,7 +45,7 @@ export const navData = [
      link: "youtube.com"
     },
     {
-     id: 5,
+     id: 6,
      icon: <InstagramIcon/>,
      text: "Instagram",
      link: "instagram.com"
