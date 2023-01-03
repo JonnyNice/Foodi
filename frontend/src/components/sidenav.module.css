@@ -12,6 +12,14 @@
     width: 60px;
     
 }
+
+/* TEST CODE */
+/* .linkText:hover{
+    transform: rotate(0deg);
+    transition: none;
+} */
+/* TEST CODE */
+
 .sideitem {
     display: flex;
     align-items: center;
@@ -33,11 +41,12 @@
 
 .linkText {
     padding-left: 16px;
+    
 }
 .linkTextClosed {
         composes: linkText;
         visibility: hidden;
-    }
+}
 
 .sideitem:hover {
     background-color: #244f7d1c;
