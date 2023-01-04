@@ -56,5 +56,17 @@ export const navData = [
      icon: <ArticleIcon/>,
      text: "Recipe Page",
      link: "/recipepage"
-    }
+    },
+    {
+             id: 6,
+             icon: <InfoIcon/>,
+             text: "login",
+             link: "/login"
+            },
+        {
+            id: 7,
+            icon: <ArticleIcon/>,
+            text: "create",
+            link: "/create"
+           }
 ]
