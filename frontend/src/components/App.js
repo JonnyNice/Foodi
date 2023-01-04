@@ -25,8 +25,9 @@ function App() {
   }
 
   return (
+    <>
     <div className="collapse">
-      <Sidenav />
+    <Sidenav />
       <main>
         <Switch>
           <Route path="/recipes" >
@@ -57,6 +58,7 @@ function App() {
        
         </main>
     </div>
+    </>
   );
 }
 

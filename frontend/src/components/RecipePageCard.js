@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
 import './RecipePage.css'
-import './RecipePageCard.css'
+// import './RecipePageCard.css'
 
 
 const RecipePageCard = () => {
@@ -30,7 +30,7 @@ const RecipePageCard = () => {
       <h4 className="infoText2">Cooktime: {recipe.cooktime} minutes</h4>
       <h5 className="infoText2">Spicy: {recipe.spicy? 'Yes' : 'No'}</h5>
       <h5 className="infoText2">Vegan: {recipe.Vegan? 'Yes' : 'Hell No'}</h5>
-      <h5 className="infoText2">Contains THC: {recipe.contains_thc? 'Hell Yes' : 'No :('}</h5>
+      <h5 className="infoText2">{recipe.contains_thc? 'Contains a lot of THC' : 'No THC found :('}</h5>
       </div>}
     </div>
   );
