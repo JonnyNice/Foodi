@@ -4,7 +4,7 @@ import HomeCreatorList from './HomeCreatorList'
 
 const Home = ({ handleCreatorNameChange }) => {
   return (
-    <div>Home
+    <div>
       <div className="App">
         <header className="App-header">
         <div className='spacer'>--------------</div>

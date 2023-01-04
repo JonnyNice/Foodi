@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+
+  
 }
 
 code {
@@ -14,8 +17,23 @@ code {
 
 .App {
   text-align: center;
+  
 }
 
+<<<<<<< HEAD
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+=======
+>>>>>>> main
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -25,21 +43,48 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  /* TEST CODE */
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  /* TEST CODE */
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */
+
+
+/* ***** JASONS CODE ***** */
+
+.collapse {
+  display: flex;
+  /* TEST CODE */
+  z-index: 10;
+  /* TEST CODE */
 }
 
+<<<<<<< HEAD
+main {
+    padding: 10px;
+  }
+
+/* body {
+      margin: 0;
+      padding: 0;
+    } */
+
+/* ***** JASONS CODE ***** */
+=======
 .middle-section{
   /* height: 125vh; */
   display: flex;
@@ -60,3 +105,4 @@ code {
   padding: 25px;
   display: inline-grid;
 }
+>>>>>>> main

@@ -1,0 +1,66 @@
+.sidenav {
+    width: 210px;
+    transition: width 0.4s ease-in-out;
+    height: 100vh;
+    background-color: orange;
+    padding-top: 28px;
+    
+}
+.sidenavClosed {
+    composes: sidenav;
+    transition: width 0.2s ease-in-out;
+    width: 60px;
+    
+}
+
+/* TEST CODE */
+/* .linkText:hover{
+    transform: rotate(0deg);
+    transition: none;
+} */
+/* TEST CODE */
+
+.sideitem {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    cursor: pointer;
+    color: #B2BAC2;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+
+/* TEST CODE */
+/* .sideitem:hover {
+    transform: rotate(360deg);
+    transition: all 0.23s ease-in-out;
+  } */
+
+/* TEST CODE */
+
+.linkText {
+    padding-left: 16px;
+    
+}
+.linkTextClosed {
+        composes: linkText;
+        visibility: hidden;
+}
+
+.sideitem:hover {
+    background-color: #244f7d1c;
+   
+}
+.menuBtn {
+    align-self: center;
+    align-self: flex-start;  
+    justify-self: flex-end;
+    color: #B2BAC2;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-left: 20px;
+}
+
+
