@@ -29,7 +29,7 @@ const RecipePage = () => {
       <h3 className="infoText2">Instructions: {recipe.instructions}</h3>
       <h4 className="infoText2">Cooktime: {recipe.cooktime} minutes</h4>
       <h5 className="infoText2">Spicy: {recipe.spicy? 'Yes' : 'No'}</h5>
-      <h5 className="infoText2">Vegan: {recipe.Vegan? 'Yes' : 'No'}</h5>
+      <h5 className="infoText2">Vegan: {recipe.Vegan? 'Yes' : 'Hell No'}</h5>
       <h5 className="infoText2">Contains THC: {recipe.contains_thc? 'Hell Yes' : 'No :('}</h5>
       </div>}
     </div>

@@ -4,10 +4,10 @@
     text-align: center;
 }
 
-main {
+main RecipePage{
     width: 100%;
     height: 100%;
-
+    background-color: purple;
     flex-direction: column;
 }
 
@@ -69,7 +69,7 @@ main {
     width: 0;
   }
   to {
-    width: 352px;
+    width: 502px;
   }
 }
 @keyframes blinkTextCursor {
@@ -82,6 +82,27 @@ main {
 }
 
 .wholeDivContainer {
-   
-    
+    position: relative;
+    background-color: #9F2B00;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto;
 }
+
+.wholeDivContainer h1 {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+    color: violet;
+  }
+
+.infoText2:hover {
+    animation: blink;
+}
+  /* .recipe-card h2 {
+    font-size: 16px;
+    margin: 10px 0;
+  } */
