@@ -1,9 +1,87 @@
-.recipe_container {
-    align-items: center;
+.text {
+
+    color: #ff9;
+    text-align: center;
 }
 
 main {
-    position: absolute;
-    display: inline-grid;
-    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+.aboutHeader {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    text-align: center;
+   
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+   
+  }
+
+ 
+
+
+  .infoText2 {
+    font-size: 300;
+    font-family: cursive;
+    opacity: .9;
+    text-align: center;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+/* Base */
+/* body {
+  padding: 0;
+  margin: 0!important;
+  background-color: #000!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+} */
+.typewriters {
+    position: relative;
+    color: hsl(0, 0%, 68%);
+    font-weight: bold!important;
+    font-family: "Anonymous Pro", monospace!important;
+    letter-spacing: 7px!important;
+    overflow: hidden;
+    border-right: 2px solid hsl(0, 0%, 80%);
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+    text-align: center;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 352px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 10%, 60%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.wholeDivContainer {
+   
+    
 }
