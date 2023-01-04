@@ -14,7 +14,7 @@ function CreatorCard({ creator, creatorName, handleCreatorNameChange, ...otherPr
     <Card className="anotherone" sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
-        sx={{ height: 150 }}
+        sx={{ height: 149 }}
         src={creator.image}
         title={creator.username}
       />
