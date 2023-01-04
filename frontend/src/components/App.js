@@ -9,6 +9,7 @@ import About from "./About"
 import Home from "./Home"
 import UserHomePage from "./UserHomePage"
 import SHITS_BROKEN from './SHITS_BROKEN';
+import RegistrationForm from './RegistrationForm';
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path= "/about">
             <About />
+          </Route>
+          <Route path= "/create">
+            <RegistrationForm />
           </Route>
           <Route exact path="/">
             <Home handleCreatorNameChange={handleCreatorNameChange} />

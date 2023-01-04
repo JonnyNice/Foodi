@@ -16,14 +16,14 @@ function CreatorCard({ creator, creatorName, handleCreatorNameChange, ...otherPr
         component="img"
         sx={{ height: 150 }}
         src={creator.image}
-        title={creator.name}
+        title={creator.username}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {creator.name}
+          {creator.username}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {creator.bio}
+          {creator.email}
         </Typography>
       </CardContent>
       <CardActions>

@@ -10,21 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_01_234449) do
+ActiveRecord::Schema.define(version: 2023_01_03_230126) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
     t.integer "rating"
-    t.integer "creator_id"
+    t.integer "user_id"
     t.integer "recipe_id"
-    t.index ["creator_id"], name: "index_comments_on_creator_id"
     t.index ["recipe_id"], name: "index_comments_on_recipe_id"
-  end
-
-  create_table "creators", force: :cascade do |t|
-    t.string "name"
-    t.string "bio"
-    t.string "image"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -35,9 +29,16 @@ ActiveRecord::Schema.define(version: 2023_01_01_234449) do
     t.boolean "spicy"
     t.boolean "vegan"
     t.boolean "contains_thc"
-    t.string "image"
-    t.integer "creator_id"
-    t.index ["creator_id"], name: "index_recipes_on_creator_id"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
