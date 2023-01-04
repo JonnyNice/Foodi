@@ -38,6 +38,8 @@ function App() {
             <RecipePage />
           </Route>
         </Switch>
+        {/* TEST CODE */}
+    
         </main>
     </div>
   
