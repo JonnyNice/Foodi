@@ -67,7 +67,7 @@ export default function NavBar() {
               <FacebookIcon />
             </Link>
             <Link className={styles.sideitem}href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-              <YouTubeIcon color="red"/>
+              <YouTubeIcon />
             </Link>
             <Link className={styles.sideitem}href="https://www.instagram.com" target="_blank">
               <InstagramIcon />
