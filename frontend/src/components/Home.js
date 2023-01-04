@@ -2,7 +2,6 @@ import HomeRecipeList from './HomeRecipeList';
 import React from 'react'
 import HomeCreatorList from './HomeCreatorList'
 
-
 const Home = ({ handleCreatorNameChange }) => {
   return (
     <div>Home

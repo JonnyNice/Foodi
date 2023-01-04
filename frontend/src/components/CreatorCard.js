@@ -7,14 +7,13 @@ import Typography from '@mui/material/Typography';
 import "./creatorCard.css";
 import LinkButton from './/LinkButton'
 
-
 function CreatorCard({ creator, creatorName, handleCreatorNameChange, ...otherProps}) {
   return (
     <div className="willywonka">
     <Card className="anotherone" sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
-        sx={{ height: 149 }}
+        sx={{ height: 150 }}
         src={creator.image}
         title={creator.username}
       />

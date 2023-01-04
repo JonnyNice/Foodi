@@ -2,7 +2,7 @@ import HomeRecipeCard from "./HomeRecipeCard";
 import { useState, useEffect } from "react"
 
 function RecipeList() {
-    
+
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function RecipeList() {
       .then((r) => r.json())
       .then((recipes) => setRecipes(recipes));
   }, []);
-  
+
     return(
         <div>
             {recipes.map((recipe, index) => {

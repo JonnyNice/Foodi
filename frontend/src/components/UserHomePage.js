@@ -10,7 +10,6 @@ function UserHomePage() {
   const [creator, setCreator] = useState(null);
 
   useEffect(() => {
-    // Fetch the creator data using creatorName
     fetch(`http://localhost:9292/users/${creatorName}`)
       .then((r) => r.json())
       .then((creator) => {
