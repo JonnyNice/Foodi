@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import RecipeCard from "./RecipeCard"
 import {useLocation} from "react-router-dom"
 import './RecipePage.css'
 import './RecipePageCard.css'
-// import "./flip-transition.css"
 
-const RecipePageCard = ({onClick}) => {
+
+const RecipePageCard = () => {
     const [recipe, setRecipe] = useState(null);
     const location = useLocation()
     const id = new URLSearchParams(location.search).get('id')
