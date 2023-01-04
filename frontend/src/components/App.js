@@ -12,6 +12,7 @@ import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
 import RecipePage from './RecipePage';
+import LoginForm from './LoginForm';
 
 function App() {
   const history = useHistory();
@@ -41,6 +42,9 @@ function App() {
           </Route>
           <Route path= "/create">
             <RegistrationForm />
+          </Route>
+          <Route path= "/login">
+            <LoginForm />
           </Route>
           <Route exact path="/">
             <Home handleCreatorNameChange={handleCreatorNameChange} />

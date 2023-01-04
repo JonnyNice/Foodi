@@ -51,10 +51,22 @@ export const navData = [
     //  text: "Instagram",
     //  link: "instagram.com"
     // },
-    // {
-    //  id: 5,
-    //  icon: <ArticleIcon/>,
-    //  text: "Recipe Page",
-    //  link: "/recipepage"
-    // }
+    {
+     id: 5,
+     icon: <ArticleIcon/>,
+     text: "Recipe Page",
+     link: "/recipepage"
+    },
+    {
+             id: 6,
+             icon: <InfoIcon/>,
+             text: "login",
+             link: "/login"
+            },
+        {
+            id: 7,
+            icon: <ArticleIcon/>,
+            text: "create",
+            link: "/create"
+           }
 ]
