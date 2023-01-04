@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-    belongs_to :creator
+    belongs_to :user
     has_many :comments
     
 end

@@ -8,10 +8,13 @@ function CreatorList() {
     const [creators, setCreators] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/creators")
+    fetch("http://localhost:9292/users")
       .then((r) => r.json())
       .then((data) => setCreators(data));
   }, []);
+  if (typeof creators !== 'object' || !creators.length) {
+    return <p>No creators found</p>;
+  }
   return (
     <div>
         {creators.map(creator => {

@@ -14,14 +14,14 @@ function CreatorCard({creator}) {
       <CardMedia
         sx={{ height: 150 }}
         image="/static/images/cards/contemplative-reptile.jpg"
-        title={creator.name}
+        title={creator.username}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {creator.name}
+          {creator.username}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {creator.bio}
+          {creator.email}
         </Typography>
       </CardContent>
       <CardActions>
