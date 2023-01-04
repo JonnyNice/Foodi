@@ -2,10 +2,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import MenuBookIcon from '@mui/icons-material/MenuBook'; 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import YouTubeIcon from '@mui/icons-material/YouTube';
-// import InstagramIcon from '@mui/icons-material/Instagram';
-// import ArticleIcon from '@mui/icons-material/Article';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import ArticleIcon from '@mui/icons-material/Article';
 
 
 export const navData = [
