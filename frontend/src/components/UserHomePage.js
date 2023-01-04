@@ -11,11 +11,14 @@ function UserHomePage() {
 
   useEffect(() => {
     // Fetch the creator data using creatorName
-    fetch(`http://localhost:9292/creators/${creatorName}`)
+    fetch(`http://localhost:9292/users/${creatorName}`)
       .then((r) => r.json())
       .then((creator) => {
         console.log(creator)
-        setCreator(creator)});
+        setCreator(creator)})
+        .catch((error) => {
+          console.log(error);
+        });
   }, [creatorName]);
 
   if (!creator) {
@@ -24,11 +27,11 @@ function UserHomePage() {
   
   return (
     <div>
-        <h1>{creator.name}</h1>
-        <h3>About: {creator.bio}</h3>
-        <img src={creator.image} alt={creator.name} />
+        <h1>{creator.username}</h1>
+        <h3>About: {creator.email}</h3>
+        {/* <img src={creator.image} alt={creator.name} /> */}
         <h2>Recipes:</h2>
-        <RecipeList creatorName={creator.name} />
+        <RecipeList creatorName={creator.username} />
     </div>
   );
 }

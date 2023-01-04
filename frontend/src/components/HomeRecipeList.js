@@ -12,7 +12,6 @@ function RecipeList() {
   }, []);
   
     return(
-        
         <div>
             {recipes.map((recipe, index) => {
             if (index >= 3) {

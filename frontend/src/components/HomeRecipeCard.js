@@ -28,7 +28,7 @@ function HomeRecipeCard({recipe}) {
             </IconButton>
         }
             title={recipe.name}
-            subheader={`Created By: ${recipe.creator.name}`}
+            subheader={`Created By: ${recipe.user.username}`}
         />
             <CardMedia
             component="img"

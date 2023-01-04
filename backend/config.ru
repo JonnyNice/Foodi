@@ -1,6 +1,6 @@
 require_relative "./config/environment"
 
-require_relative './app/controllers/UsersController'
+# require_relative './app/controllers/UsersController'
 
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do

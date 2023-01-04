@@ -15,9 +15,10 @@ function App() {
 
   const [creatorName, setCreatorName] = React.useState('');
 
-  const handleCreatorNameChange = (newCreatorName) => {
-    setCreatorName(newCreatorName);
-  };
+  function handleCreatorNameChange(creatorName) {
+    console.log(creatorName);
+    window.location.href = `/recipes?creator_name=${creatorName}`;
+  }
 
   return (
     <div>
@@ -26,7 +27,7 @@ function App() {
           <Route path="/recipes" >
             <Recipes creatorName={creatorName} />
           </Route>
-          <Route path="/creators" >
+          <Route path="/users" >
             <Creators handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path="/search">
@@ -41,7 +42,7 @@ function App() {
           <Route exact path="/">
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
-          <Route path= "/creator">
+          <Route path= "/user">
             <UserHomePage />
           </Route>
           <SHITS_BROKEN />

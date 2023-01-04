@@ -3,6 +3,6 @@ class Recipe < ActiveRecord::Base
     has_many :comments
 
     def as_json(options={})
-        super(options.merge({include: :creator}))
+        super(options.merge({include: :user}))
     end
 end

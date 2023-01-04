@@ -14,7 +14,7 @@ const NavBar = () => {
       <NavLink className="navItem" to="/recipes" exact>
         Recipes
       </NavLink>
-      <NavLink className="navItem" to="/creators" exact>
+      <NavLink className="navItem" to="/users" exact>
         Creators
       </NavLink>
       <NavLink className="navItem" to="/about" exact>

@@ -27,7 +27,7 @@ function HomeCreatorCard({creator, creatorName, handleCreatorNameChange, ...othe
                 <MoreVertIcon />
             </IconButton>
         }
-            title={creator.name}
+            title={creator.username}
         subheader="September 14, 2016"
         />
     <CardMedia
@@ -45,7 +45,7 @@ function HomeCreatorCard({creator, creatorName, handleCreatorNameChange, ...othe
       </CardContent>
       <CardActions>
       <div {...otherProps}>
-        <LinkButton creatorName={creator.name} onClick={handleCreatorNameChange}/>
+        <LinkButton creatorName={creator.username} onClick={handleCreatorNameChange}/>
       </div>
         {/* <Button size="small">Learn More</Button> */}
       </CardActions>

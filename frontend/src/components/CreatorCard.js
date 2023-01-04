@@ -28,7 +28,7 @@ function CreatorCard({ creator, creatorName, handleCreatorNameChange, ...otherPr
       </CardContent>
       <CardActions>
       <div {...otherProps}>
-        <LinkButton creatorName={creatorName} onClick={handleCreatorNameChange}/>
+        <LinkButton creatorName={creator.username} onClick={handleCreatorNameChange}/>
       </div>
         {/* <Button size="small">Learn More</Button> */}
       </CardActions>

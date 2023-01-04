@@ -18,7 +18,7 @@ function CreatorList({ handleCreatorNameChange }) {
   return (
     <div>
         {creators.map(creator => {
-        return <CreatorCard className="willywonka" key={creator.name} creator={creator} creatorName={creator.name} handleCreatorNameChange={handleCreatorNameChange} />
+        return <CreatorCard className="willywonka" key={creator.username} creator={creator} creatorName={creator.name} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )

@@ -8,7 +8,7 @@ function HomeCreatorList({ handleCreatorNameChange }) {
     const [creators, setCreators] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/creators")
+    fetch("http://localhost:9292/users")
       .then((r) => r.json())
       .then((data) => setCreators(data));
   }, []);
@@ -19,7 +19,7 @@ function HomeCreatorList({ handleCreatorNameChange }) {
             if (index >= 3) {
                 return;
                 }
-        return <HomeCreatorCard className="home_creator_card" key={creator.name} creator={creator} handleCreatorNameChange={handleCreatorNameChange} />
+        return <HomeCreatorCard className="home_creator_card" key={creator.username} creator={creator} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )
