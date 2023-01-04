@@ -1,9 +1,9 @@
 import React from 'react'
 import CreatorList from "./CreatorList"
 
-const Creators = () => {
+const Creators = ({ handleCreatorNameChange }) => {
   return (
-    <CreatorList />
+    <CreatorList handleCreatorNameChange={handleCreatorNameChange} />
   )
 }
 

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import CreatorCard from "./CreatorCard"
 import "./creatorCard.css"
 
-function CreatorList() {
+function CreatorList({ handleCreatorNameChange }) {
 
     const [creators, setCreators] = useState([])
 
@@ -15,7 +15,7 @@ function CreatorList() {
   return (
     <div>
         {creators.map(creator => {
-        return <CreatorCard className="willywonka" key={creator.name} creator={creator} />
+        return <CreatorCard className="willywonka" key={creator.name} creator={creator} creatorName={creator.name} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )

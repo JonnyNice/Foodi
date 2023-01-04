@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_234449) do
   create_table "creators", force: :cascade do |t|
     t.string "name"
     t.string "bio"
+    t.string "image"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2023_01_01_234449) do
     t.boolean "spicy"
     t.boolean "vegan"
     t.boolean "contains_thc"
+    t.string "image"
     t.integer "creator_id"
     t.index ["creator_id"], name: "index_recipes_on_creator_id"
   end

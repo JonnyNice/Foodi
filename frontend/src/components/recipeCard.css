@@ -3,3 +3,8 @@
     padding-bottom: 100px;
     display: inline-grid;
 }
+
+.home_recipe_container {
+    padding: 25px;
+    display: inline-grid;
+}

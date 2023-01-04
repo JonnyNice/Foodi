@@ -1,5 +1,5 @@
 import '../App.css';
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
@@ -7,19 +7,26 @@ import Creators from "./Creators"
 import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
+import UserHomePage from "./UserHomePage"
+import SHITS_BROKEN from './SHITS_BROKEN';
 
 function App() {
 
+  const [creatorName, setCreatorName] = React.useState('');
+
+  const handleCreatorNameChange = (newCreatorName) => {
+    setCreatorName(newCreatorName);
+  };
 
   return (
     <div>
       <NavBar />
         <Switch>
           <Route path="/recipes" >
-            <Recipes />
+            <Recipes creatorName={creatorName} />
           </Route>
           <Route path="/creators" >
-            <Creators />
+            <Creators handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path="/search">
             <Search />
@@ -28,8 +35,12 @@ function App() {
             <About />
           </Route>
           <Route exact path="/">
-            <Home  />
+            <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
+          <Route path= "/creator">
+            <UserHomePage />
+          </Route>
+          <SHITS_BROKEN />
         </Switch>
     </div>
   );

@@ -10,10 +10,21 @@ class ApplicationController < Sinatra::Base
     creators = Creator.all
     creators.to_json
   end
-
+  
   get '/recipes' do
-    recipes = Recipe.all
+    creator_name = params[:creator_name] || 'all'
+    if creator_name == 'all'
+      recipes = Recipe.all
+    else
+      creator = Creator.find_by(name: creator_name)
+      recipes = Recipe.where(creator: creator)
+    end
     recipes.to_json
   end
+
+    get '/creators/:name' do
+      creator = Creator.find_by(name: params[:name])
+      creator.to_json
+    end
 
 end
