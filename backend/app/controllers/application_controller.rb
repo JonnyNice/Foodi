@@ -40,17 +40,26 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    # Check if the user entered a username or an email
-    user = User.find_by(username: params[:username]) || User.find_by(email: params[:username])
-
-    # Check if the user exists and the password is correct
+    # Find the user by their email or username
+    user = User.find_by(email: params[:emailOrUsername]) || User.find_by(username: params[:emailOrUsername])
+  
+    # If the user exists and the password is correct, log the user in by saving their information in the session
     if user && user.authenticate(params[:password])
-      # Generate a new session and return a JSON response with a success message
       session[:user_id] = user.id
       { message: 'Logged in successfully' }.to_json
+      redirect "/dashboard/#{user.username}"
+    # If the user doesn't exist or the password is incorrect, return an error message
     else
-      # Return a JSON response with an error message
-      { error: 'Invalid username/email or password' }.to_json
+      { error: 'Invalid email/username or password' }.to_json
+    end
+  end
+
+  get '/dashboard/:username' do
+    user = User.find_by(username: params[:username])
+    if user
+      user.to_json
+    else
+      # Handle the case where the user doesn't exist
     end
   end
 

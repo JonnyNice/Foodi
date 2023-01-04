@@ -1,33 +1,36 @@
 import { useState } from 'react';
 
-function LoginForm() {
-  // Declare a state variable called "emailOrUsername" and a function to update it
+function LoginForm({handleDashName}) {
+
   const [emailOrUsername, setEmailOrUsername] = useState('');
-  // Declare a state variable called "password" and a function to update it
+
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    // Make a POST request to the '/login' endpoint with the email/username and password
-    fetch('localhost:9292/login', {
+    // event.preventDefault();
+    fetch('http://localhost:9292/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ emailOrUsername, password }),
     }).then((response) => {
-      // If the response is successful, save the user's information in the session and redirect to the dashboard
-      if (response.ok) {
-        response.json().then((user) => {
-          sessionStorage.setItem('user', JSON.stringify(user));
-          window.location.replace('/dashboard');
-        });
+      return response.json();
+    }).then((responseBody) => {
+      if (responseBody.error) {
+        // Handle unsuccessful login
+        console.log('Invalid email/username or password');
+      } else {
+        sessionStorage.setItem('user', JSON.stringify(responseBody));
+        // window.location.replace(`/dashboard?username=${emailOrUsername}`)
+        handleDashName(emailOrUsername);
       }
     });
   };
+  
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <label htmlFor="emailOrUsername">
         Email or username:
         <input
@@ -48,8 +51,8 @@ function LoginForm() {
         />
       </label>
       <br />
-      <button type="submit">Log in</button>
-    </form>
+      <button onClick={handleSubmit} type="submit">Log in</button>
+    </>
   );
 }
 
