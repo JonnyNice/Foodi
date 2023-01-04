@@ -20,7 +20,6 @@ function UserHomePage(props) {
   if (!user) {
     return <div>Loading...</div>;
   }
-  
   return (
     <div>
       <div>
