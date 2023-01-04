@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import "./recipeCard.css"
+import { useHistory } from 'react-router-dom';
 
 
 const ExpandMore = styled((props) => {
@@ -29,6 +30,8 @@ const ExpandMore = styled((props) => {
   }));
 
 function RecipeCard({recipe}) {
+   
+
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
