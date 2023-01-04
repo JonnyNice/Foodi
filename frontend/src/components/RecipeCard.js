@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import "./recipeCard.css"
+import { Link } from 'react-router-dom';
 
 
 const ExpandMore = styled((props) => {
@@ -72,6 +73,9 @@ function RecipeCard({recipe}) {
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
+            <Link to={`/recipepage?id=${recipe.id}`}>
+              <button>View Recipe</button>
+            </Link>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}

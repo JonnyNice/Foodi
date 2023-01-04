@@ -11,6 +11,7 @@ import UserHomePage from "./UserHomePage"
 import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
+import RecipePage from './RecipePage';
 
 function App() {
   const history = useHistory();
@@ -47,6 +48,9 @@ function App() {
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>
+          <Route path="/recipepage" >
+            <RecipePage />
+          </Route>
           <SHITS_BROKEN />
         </Switch>
         {/* TEST CODE */}
@@ -56,22 +60,3 @@ function App() {
 }
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <NavBar/>
-//       <main>
-//       <Switch>
-//         <Route exact path="/" element={<Home />}/>
-//         <Route path="/recipes" element={<Recipes />} />
-//         <Route path="/cooks" element={<Creators />}/>
-//         <Route path="/about" element={<About />} />
-//       </Switch>
-//       </main>
-//     </div>
-//   );
-// }
-
-// export default App;
-
