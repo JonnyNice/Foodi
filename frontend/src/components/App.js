@@ -13,14 +13,21 @@ import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
 import RecipePage from './RecipePage';
 import LoginForm from './LoginForm';
+import Dashboard from "./Dashboard"
 
 function App() {
   const history = useHistory();
   const [username, setUsername] = useState('');
+  const [dashName, setDashName] = useState('');
 
   function handleCreatorNameChange(username) {
     setUsername(username);
     history.push(`/userpage?username=${username}`);
+  }
+
+  function handleDashName(username) {
+    setUsername(username);
+    history.replace(`/dashboard/${username}`);
   }
 
   return (
@@ -41,14 +48,18 @@ function App() {
             <About />
           </Route>
           <Route path= "/create">
-            <RegistrationForm />
+            <RegistrationForm handleDashName={handleDashName}/>
           </Route>
           <Route path= "/login">
-            <LoginForm />
+            <LoginForm handleDashName={handleDashName}/>
           </Route>
           <Route exact path="/">
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
+          <Route path="/dashboard/:username" >
+            <Dashboard username={username}/>
+          </Route>
+
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>
