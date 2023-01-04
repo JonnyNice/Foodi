@@ -5,32 +5,34 @@ import RecipeList from './RecipeList';
 function UserHomePage() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const creatorName = params.get('creator_name');
+  const username = params.get('username');
 
-  const [creator, setCreator] = useState(null);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:9292/users/${creatorName}`)
+    fetch(`http://localhost:9292/users/${username}`)
       .then((r) => r.json())
-      .then((creator) => {
-        console.log(creator)
-        setCreator(creator)})
+      .then((user) => {
+        console.log(user)
+        setUser(user[0])})
         .catch((error) => {
           console.log(error);
         });
-  }, [creatorName]);
+  }, [location]);
 
-  if (!creator) {
+  if (!user) {
     return <div>Loading...</div>;
   }
   
   return (
     <div>
-        <h1>{creator.username}</h1>
-        <h3>About: {creator.email}</h3>
-        {/* <img src={creator.image} alt={creator.name} /> */}
+      <div>
+        <h1>{user.username}</h1>
+        <h3>About: {user.email}</h3>
+        </div>
+        {/* <img src={user.image} alt={user.name} /> */}
         <h2>Recipes:</h2>
-        <RecipeList creatorName={creator.username} />
+        <RecipeList creatorName={user.username} />
     </div>
   );
 }

@@ -1,23 +1,23 @@
 import { Link } from 'react-router-dom';
 
 const LinkButton = (props) => {
-  const { creatorName, onClick, ...otherProps } = props;
+  const { username, onClick, ...otherProps } = props;
   let pathname;
-  if (creatorName === 'all') {
+  if (username === 'all') {
     pathname = '/users';
   } else {
-    pathname = `/users/${creatorName}`;
+    pathname = `/userpage/${username}`;
   }
   return (
     <Link
       {...otherProps}
       to={{
-        pathname: '/recipes',
-        search: `?creator_name=${creatorName}`,
+        pathname: '/userpage',
+        search: `?username=${username}`,
       }}
       onClick={() => {
         if (onClick) {
-          onClick(creatorName);
+          onClick(username);
         }
       }}
     >

@@ -19,35 +19,20 @@ class ApplicationController < Sinatra::Base
     users.to_json
   end
 
-  # get '/recipes' do
-  #   creator_name = params[:creator_name] || 'all'
-  #   if creator_name == 'all'
-  #     recipes = Recipe.all
-  #   else
-  #     user = User.find_by(name: creator_name)
-  #     recipes = Recipe.where(user: user)
-  #   end
-  #   recipes.to_json
-  # end
   get '/recipes' do
-    creator_name = params[:creator_name] || 'all'
-    if creator_name == 'all'
       recipes = Recipe.all
-    else
-      user = User.find_by(username: creator_name)
-      recipes = Recipe.where(user: user)
-    end
     recipes.to_json
   end
 
   get '/users/:username?' do
-    creator_name = params[:creator_name] || 'all'
-    if creator_name == 'all'
+    username = params[:username] || params[:username]
+    if username == 'all'
       users = User.all
     else
-      users = User.where(username: creator_name)
+      users = User.where(username: username)
     end
     users.to_json
   end
+
 
 end

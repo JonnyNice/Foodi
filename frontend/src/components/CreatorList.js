@@ -5,20 +5,20 @@ import "./creatorCard.css"
 
 function CreatorList({ handleCreatorNameChange }) {
 
-    const [creators, setCreators] = useState([])
+    const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
       .then((r) => r.json())
-      .then((data) => setCreators(data));
+      .then((data) => setUsers(data));
   }, []);
-  if (typeof creators !== 'object' || !creators.length) {
-    return <p>No creators found</p>;
+  if (typeof users !== 'object' || !users.length) {
+    return <p>No users found</p>;
   }
   return (
     <div>
-        {creators.map(creator => {
-        return <CreatorCard className="willywonka" key={creator.username} creator={creator} creatorName={creator.name} handleCreatorNameChange={handleCreatorNameChange} />
+        {users.map(user => {
+        return <CreatorCard className="willywonka" key={user.username} user={user} creatorName={user.name} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )

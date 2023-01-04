@@ -7,27 +7,27 @@ import Typography from '@mui/material/Typography';
 import "./creatorCard.css";
 import LinkButton from './/LinkButton'
 
-function CreatorCard({ creator, creatorName, handleCreatorNameChange, ...otherProps}) {
+function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
   return (
     <div className="willywonka">
     <Card className="anotherone" sx={{ maxWidth: 400 }}>
-      <CardMedia
+      {/* <CardMedia
         component="img"
         sx={{ height: 150 }}
-        src={creator.image}
-        title={creator.username}
-      />
+        src={user.image}
+        title={user.username}
+      /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {creator.username}
+          {user.username}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {creator.email}
+          {user.email}
         </Typography>
       </CardContent>
       <CardActions>
       <div {...otherProps}>
-        <LinkButton creatorName={creator.username} onClick={handleCreatorNameChange}/>
+        <LinkButton username={user.username} onClick={handleCreatorNameChange}/>
       </div>
         {/* <Button size="small">Learn More</Button> */}
       </CardActions>

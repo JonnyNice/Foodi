@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState, useEffect } from "react";
+import React, { useState, useLocation } from "react";
 import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
@@ -10,14 +10,16 @@ import Home from "./Home"
 import UserHomePage from "./UserHomePage"
 import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
+import { useHistory } from 'react-router-dom';
 
 function App() {
+  const history = useHistory();
+  const [username, setUsername] = useState('');
 
-  const [creatorName, setCreatorName] = React.useState('');
 
-  function handleCreatorNameChange(creatorName) {
-    console.log(creatorName);
-    window.location.href = `/recipes?creator_name=${creatorName}`;
+  function handleCreatorNameChange(username) {
+    setUsername(username);
+    history.push(`/userpage?username=${username}`);
   }
 
   return (
@@ -25,7 +27,7 @@ function App() {
       <NavBar />
         <Switch>
           <Route path="/recipes" >
-            <Recipes creatorName={creatorName} />
+            <Recipes creatorName={username} />
           </Route>
           <Route path="/users" >
             <Creators handleCreatorNameChange={handleCreatorNameChange} />
@@ -42,7 +44,7 @@ function App() {
           <Route exact path="/">
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
-          <Route path= "/user">
+          <Route path= "/userpage">
             <UserHomePage />
           </Route>
           <SHITS_BROKEN />

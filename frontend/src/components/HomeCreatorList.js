@@ -5,21 +5,21 @@ import "./creatorCard.css"
 
 function HomeCreatorList({ handleCreatorNameChange }) {
 
-    const [creators, setCreators] = useState([])
+    const [users, setUsers] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
       .then((r) => r.json())
-      .then((data) => setCreators(data));
+      .then((data) => setUsers(data));
   }, []);
 
   return (
     <div>
-        {creators.map((creator, index) => {
+        {users.map((user, index) => {
             if (index >= 3) {
                 return;
                 }
-        return <HomeCreatorCard className="home_creator_card" key={creator.username} creator={creator} handleCreatorNameChange={handleCreatorNameChange} />
+        return <HomeCreatorCard className="home_creator_card" key={user.username} user={user} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )

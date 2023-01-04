@@ -6,21 +6,21 @@ function RecipeList() {
 
   const [recipes, setRecipes] = useState([])
   const searchParams = new URLSearchParams(useLocation().search);
-  const creatorName = searchParams.get('creator_name') || 'all';
+  const username = searchParams.get('username') || 'all';
 
   useEffect(() => {
-    if (creatorName === 'all') {
+    if (username === 'all') {
       fetch('http://localhost:9292/recipes')
         .then((r) => r.json())
         .then((recipes) => setRecipes(recipes));
     } else {
       const searchParams = new URLSearchParams();
-      searchParams.set('creator_name', creatorName);
+      searchParams.set('username', username);
       fetch(`http://localhost:9292/recipes?${searchParams}`)
         .then((r) => r.json())
         .then((recipes) => setRecipes(recipes));
     }
-  }, [creatorName]);
+  }, [username]);
 
     return(
         <div>{recipes.map(recipe => {
