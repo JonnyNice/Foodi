@@ -8,7 +8,7 @@ class CreateRecipes < ActiveRecord::Migration[6.1]
       t.boolean :spicy
       t.boolean :vegan
       t.boolean :contains_thc
-      t.belongs_to :creator
+      t.belongs_to :user
     end
   end
 end

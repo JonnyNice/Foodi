@@ -20,6 +20,9 @@ const NavBar = () => {
       <NavLink className="navItem" to="/about" exact>
         About
       </NavLink>
+      <NavLink className="navItem" to="/create" exact>
+        Register for free!
+      </NavLink>
     </div>
   )
 }

@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
     create_table :comments do |t|
       t.string :comment
       t.integer :rating
-      t.belongs_to :creator
+      t.belongs_to :user
       t.belongs_to :recipe
     end
   end
