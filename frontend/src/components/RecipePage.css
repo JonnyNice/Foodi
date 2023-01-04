@@ -1,0 +1,9 @@
+.recipe_container {
+    align-items: center;
+}
+
+main {
+    position: absolute;
+    display: inline-grid;
+    z-index: 2;
+}

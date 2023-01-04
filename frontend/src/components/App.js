@@ -7,7 +7,7 @@ import Creators from "./Creators"
 import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
-
+import RecipePage from "./RecipePage"
 
 // ***** ORIGINAL CODE *****
 function App() {
@@ -33,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/">
             <Home  />
+          </Route>
+          <Route exact path="/recipepage">
+            <RecipePage />
           </Route>
         </Switch>
         </main>

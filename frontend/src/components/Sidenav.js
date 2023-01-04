@@ -7,6 +7,10 @@ import { useState } from "react";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 
+import { Link } from '@mui/material';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 // ***** ORIGINAL CODE *****
 // const NavBar = () => {
@@ -59,6 +63,15 @@ export default function NavBar() {
               <span className={styles.linkText}>{item.text}</span>
           </NavLink>
           })}
+            <Link className={styles.sideitem}href="https://www.facebook.com/" target="_blank">
+              <FacebookIcon />
+            </Link>
+            <Link className={styles.sideitem}href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+              <YouTubeIcon color="red"/>
+            </Link>
+            <Link className={styles.sideitem}href="https://www.instagram.com" target="_blank">
+              <InstagramIcon />
+            </Link>
       </div>
     )
   }
