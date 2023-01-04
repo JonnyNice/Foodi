@@ -34,7 +34,7 @@ function RecipeCard({recipe}) {
     const handleExpandClick = () => {
       setExpanded(!expanded);
     };
-  
+
     return (
         <div className="recipe_container">
       <Card sx={{ maxWidth: 345 }}>
@@ -55,7 +55,7 @@ function RecipeCard({recipe}) {
         <CardMedia
           component="img"
           height="194"
-          image="/static/images/cards/paella.jpg"
+          image={recipe.image}
           alt={recipe.name}
         />
         <CardContent>

@@ -1,19 +1,43 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  
-  # Add your routes here
+
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
 
-  get "/creators" do 
-    creators = Creator.all
-    creators.to_json
+  post '/users' do
+    user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    if user.save
+      { message: 'User created successfully' }.to_json
+    else
+      console.log('wtf')
+    end
+  end
+
+  get "/users" do
+    users = User.all
+    users.to_json
   end
 
   get '/recipes' do
-    recipes = Recipe.all
+    username = params[:username]
+    if username.nil? || username == 'all'
+      recipes = Recipe.all
+    else
+      recipes = Recipe.joins(:user).where(users: { username: username })
+    end
     recipes.to_json
   end
+
+  get '/users/:username?' do
+    username = params[:username] || params[:username]
+    if username == 'all'
+      users = User.all
+    else
+      users = User.where(username: username)
+    end
+    users.to_json
+  end
+
 
 end

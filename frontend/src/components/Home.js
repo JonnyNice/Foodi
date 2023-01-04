@@ -1,13 +1,21 @@
-import RecipeList from './RecipeList';
+import HomeRecipeList from './HomeRecipeList';
 import React from 'react'
+import HomeCreatorList from './HomeCreatorList'
 
-const Home = () => {
+const Home = ({ handleCreatorNameChange }) => {
   return (
     <div>
       <div className="App">
         <header className="App-header">
-          <h1>Hello World</h1>
-          {/* <RecipeList /> */}
+        <div className='spacer'>--------------</div>
+          <div className = "middle-section">Featured Recipes
+            <HomeRecipeList />
+          </div>
+          <div className='spacer'>--------------</div>
+          <div className = "bottom-section">Featured Creators
+            <HomeCreatorList handleCreatorNameChange={handleCreatorNameChange} />
+          </div>
+          <div className='spacer'>--------------</div>
         </header>
       </div>
     </div>

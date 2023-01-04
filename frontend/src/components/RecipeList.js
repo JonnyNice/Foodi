@@ -1,29 +1,29 @@
 import RecipeCard from "./RecipeCard";
 import { useState, useEffect } from "react"
-// import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
 
 function RecipeList() {
-    
-  // const history = useHistory();
   const [recipes, setRecipes] = useState([])
+  const location = useLocation();
+  const username = new URLSearchParams(location.search).get('username') || 'all';
 
   useEffect(() => {
-    fetch("http://localhost:9292/recipes")
-      .then((r) => r.json())
-      .then((recipes) => setRecipes(recipes));
-  }, []);
+    if (username === 'all') {
+      fetch('http://localhost:9292/recipes')
+        .then((r) => r.json())
+        .then((recipes) => setRecipes(recipes));
+    } else {
+      fetch(`http://localhost:9292/recipes?username=${username}`)
+        .then((r) => r.json())
+        .then((recipes) => setRecipes(recipes));
+    }
+  }, [username]);
 
-  // ***** TEST CODE ***** 
-  // const handleClick = (recipeId) => {
-  //   history.push(`/recipes/${recipeId}`);
-  // }
-// ***** TEST CODE ***** 
-
-    return(
-        <div>{recipes.map(recipe => {
-            return <RecipeCard recipe={recipe} key={recipe.id} />
-        })}</div>
-    )
+  return(
+    <div>{recipes.map(recipe => {
+      return <RecipeCard recipe={recipe} key={recipe.id} />
+    })}</div>
+  )
 }
 
 export default RecipeList;

@@ -20,6 +20,7 @@ code {
   
 }
 
+<<<<<<< HEAD
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -31,6 +32,8 @@ code {
   }
 } */
 
+=======
+>>>>>>> main
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -70,6 +73,7 @@ code {
   /* TEST CODE */
 }
 
+<<<<<<< HEAD
 main {
     padding: 10px;
   }
@@ -80,3 +84,25 @@ main {
     } */
 
 /* ***** JASONS CODE ***** */
+=======
+.middle-section{
+  /* height: 125vh; */
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  padding: 20px;
+}
+
+.bottom-section{
+  /* height: 125vh; */
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  padding: 20px;
+}
+
+.homeccard {
+  padding: 25px;
+  display: inline-grid;
+}
+>>>>>>> main

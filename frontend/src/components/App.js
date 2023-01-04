@@ -1,17 +1,29 @@
 import '../App.css';
 import React from "react";
 import Sidenav from "./Sidenav"
+import React, { useState, useLocation } from "react";
+import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
 import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
-import RecipePage from "./RecipePage"
+import UserHomePage from "./UserHomePage"
+import SHITS_BROKEN from './SHITS_BROKEN';
+import RegistrationForm from './RegistrationForm';
+import { useHistory } from 'react-router-dom';
 
 // ***** ORIGINAL CODE *****
 function App() {
+  const history = useHistory();
+  const [username, setUsername] = useState('');
 
+
+  function handleCreatorNameChange(username) {
+    setUsername(username);
+    history.push(`/userpage?username=${username}`);
+  }
 
   return (
   
@@ -20,10 +32,10 @@ function App() {
       <main>
         <Switch>
           <Route path="/recipes" >
-            <Recipes />
+            <Recipes creatorName={username} />
           </Route>
-          <Route path="/cooks" >
-            <Creators />
+          <Route path="/users" >
+            <Creators handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path="/search">
             <Search />
@@ -31,12 +43,16 @@ function App() {
           <Route path= "/about">
             <About />
           </Route>
+          <Route path= "/create">
+            <RegistrationForm />
+          </Route>
           <Route exact path="/">
-            <Home  />
+            <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
-          <Route exact path="/recipepage">
-            <RecipePage />
+          <Route path= "/userpage">
+            <UserHomePage username={username} />
           </Route>
+          <SHITS_BROKEN />
         </Switch>
         {/* TEST CODE */}
     

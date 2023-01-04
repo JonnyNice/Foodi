@@ -3,19 +3,22 @@ import {useState, useEffect} from 'react'
 import CreatorCard from "./CreatorCard"
 import "./creatorCard.css"
 
-function CreatorList() {
+function CreatorList({ handleCreatorNameChange }) {
 
-    const [creators, setCreators] = useState([])
+    const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/creators")
+    fetch("http://localhost:9292/users")
       .then((r) => r.json())
-      .then((data) => setCreators(data));
+      .then((data) => setUsers(data));
   }, []);
+  if (typeof users !== 'object' || !users.length) {
+    return <p>No users found</p>;
+  }
   return (
     <div>
-        {creators.map(creator => {
-        return <CreatorCard className="willywonka" key={creator.name} creator={creator} />
+        {users.map(user => {
+        return <CreatorCard className="willywonka" key={user.username} user={user} creatorName={user.name} handleCreatorNameChange={handleCreatorNameChange} />
     })}
     </div>
   )
