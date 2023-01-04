@@ -13,6 +13,7 @@ import UserHomePage from "./UserHomePage"
 import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
+import RecipePage from './RecipePage';
 
 function App() {
   const history = useHistory();
@@ -49,7 +50,9 @@ function App() {
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>
-          <SHITS_BROKEN />
+          <Route path= "/recipepage">
+            <RecipePage />
+          </Route>
         </Switch>
        
         </main>
