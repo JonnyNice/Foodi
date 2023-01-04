@@ -13,10 +13,11 @@ function RecipeList() {
       .then((recipes) => setRecipes(recipes));
   }, []);
 
+  // ***** TEST CODE ***** 
   // const handleClick = (recipeId) => {
   //   history.push(`/recipes/${recipeId}`);
   // }
-
+// ***** TEST CODE ***** 
 
     return(
         <div>{recipes.map(recipe => {

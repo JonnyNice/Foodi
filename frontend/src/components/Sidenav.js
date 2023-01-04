@@ -43,7 +43,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 
-// ***** TEST CODE ***** 
+// ***** TEST CODE, WORKING ***** 
 
 export default function NavBar() {
 

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import RecipeList from "./RecipeList"
 import RecipeCard from "./RecipeCard"
 
 const RecipePage = () => {
