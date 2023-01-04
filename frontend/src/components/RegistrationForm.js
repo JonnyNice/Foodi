@@ -6,6 +6,7 @@ function RegistrationForm({handleDash}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch("http://localhost:9292/users", {

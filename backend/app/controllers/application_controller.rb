@@ -43,6 +43,7 @@ class ApplicationController < Sinatra::Base
     recipe = Recipe.find(params[:id])
     recipe.to_json
   end
+
   post '/login' do
     # Find the user by their email or username
     user = User.find_by(email: params[:emailOrUsername]) || User.find_by(username: params[:emailOrUsername])
@@ -67,5 +68,19 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post '/recipes' do
+    user = User.find_by(username: params[:username])
+    recipe = Recipe.new(
+      user_id: user.id,
+      name: params[:name],
+      ingredients: params[:ingredients],
+      instructions: params[:instructions]
+    )
+    if recipe.save
+      { message: 'Recipe created successfully' }.to_json
+    else
+      { error: 'Error creating recipe' }.to_json
+    end
+  end
 
 end
