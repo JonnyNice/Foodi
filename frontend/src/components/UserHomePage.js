@@ -1,11 +1,8 @@
-import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import RecipeList from './RecipeList';
 
-function UserHomePage() {
-  const location = useLocation();
-  const params = new URLSearchParams(location.search);
-  const username = params.get('username');
+function UserHomePage(props) {
+  const { username } = props;
 
   const [user, setUser] = useState(null);
 
@@ -18,7 +15,7 @@ function UserHomePage() {
         .catch((error) => {
           console.log(error);
         });
-  }, [location]);
+  }, [username]);
 
   if (!user) {
     return <div>Loading...</div>;
@@ -32,7 +29,7 @@ function UserHomePage() {
         </div>
         {/* <img src={user.image} alt={user.name} /> */}
         <h2>Recipes:</h2>
-        <RecipeList creatorName={user.username} />
+        <RecipeList username={user.username} />
     </div>
   );
 }

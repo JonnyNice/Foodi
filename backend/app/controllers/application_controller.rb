@@ -20,7 +20,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes' do
+    username = params[:username]
+    if username.nil? || username == 'all'
       recipes = Recipe.all
+    else
+      recipes = Recipe.joins(:user).where(users: { username: username })
+    end
     recipes.to_json
   end
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import RecipeList from "./RecipeList"
 
-const Recipes = ({creatorName}) => {
+const Recipes = ({username}) => {
 
   return (
-    <RecipeList creatorName={creatorName}/>
+    <RecipeList username={username}/>
   )
 }
 

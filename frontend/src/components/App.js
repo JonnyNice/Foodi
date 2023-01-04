@@ -45,7 +45,7 @@ function App() {
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path= "/userpage">
-            <UserHomePage />
+            <UserHomePage username={username} />
           </Route>
           <SHITS_BROKEN />
         </Switch>

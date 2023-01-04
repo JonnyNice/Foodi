@@ -18,4 +18,4 @@ const Creators = (props) => {
   )
 }
 
-export default Creators
+export default Creators;
