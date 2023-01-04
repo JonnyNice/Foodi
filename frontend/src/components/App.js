@@ -1,8 +1,6 @@
 import '../App.css';
-import React from "react";
 import Sidenav from "./Sidenav"
 import React, { useState, useLocation } from "react";
-import NavBar from "./NavBar"
 import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
@@ -14,11 +12,9 @@ import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
 
-// ***** ORIGINAL CODE *****
 function App() {
   const history = useHistory();
   const [username, setUsername] = useState('');
-
 
   function handleCreatorNameChange(username) {
     setUsername(username);
@@ -26,7 +22,6 @@ function App() {
   }
 
   return (
-  
     <div className="collapse">
       <Sidenav />
       <main>
@@ -55,20 +50,12 @@ function App() {
           <SHITS_BROKEN />
         </Switch>
         {/* TEST CODE */}
-    
         </main>
     </div>
-  
   );
 }
 
 export default App;
-// ***** ORIGINAL CODE *****
-
-
-
-
-// ***** TEST CODE *****
 
 // function App() {
 //   return (
@@ -82,7 +69,6 @@ export default App;
 //         <Route path="/about" element={<About />} />
 //       </Switch>
 //       </main>
-     
 //     </div>
 //   );
 // }

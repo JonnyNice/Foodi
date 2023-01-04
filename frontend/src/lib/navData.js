@@ -24,8 +24,8 @@ export const navData = [
     {
     id: 2,
     icon: <AccountCircleIcon/>,
-    text: "Cooks",
-    link: "cooks"
+    text: "Users",
+    link: "users"
     },
     {
      id: 3,
