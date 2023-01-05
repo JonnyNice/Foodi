@@ -65,6 +65,8 @@ class ApplicationController < Sinatra::Base
       user.to_json
     else
       # Handle the case where the user doesn't exist
+      status 404
+    { error: 'User not found' }.to_json
     end
   end
 
