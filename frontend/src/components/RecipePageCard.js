@@ -44,6 +44,7 @@
 // ***** TEST CODE, IS WORKING *****
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
+import './HeartEffects.scss'
 import './FlipCard.scss'
 
 
@@ -51,7 +52,7 @@ const RecipePageCard = () => {
   const [recipe, setRecipe] = useState(null);
   const location = useLocation()
   const id = new URLSearchParams(location.search).get('id')
-//   const [flipped, setFlipped] = useState(false);  // Add this state to track if the card is flipped
+  
 
   useEffect(() => {
     fetch(`http://localhost:9292/recipes/${id}`)
@@ -62,10 +63,6 @@ const RecipePageCard = () => {
       }
     )
   }, [id])
-
-//   const handleClick = () => {  // Add this function to toggle the flipped state
-//     setFlipped(!flipped);
-//   }
 
   return (
     <div className='container'>
@@ -87,6 +84,8 @@ const RecipePageCard = () => {
           <h2>{recipe.spicy? 'Spicy' : 'Not Spicy' }</h2>
           <h2>{recipe.Vegan? 'Vegan' : 'Not Vegan' }</h2>
           <h2>{recipe.contains_thc? 'Contains a lot of THC' : 'No trace of THC found' }</h2>
+          <input id="toggle-heart" type="checkbox" />
+          <label htmlFor="toggle-heart" aria-label="like">❤</label>
         </div>
       </div>
       }
