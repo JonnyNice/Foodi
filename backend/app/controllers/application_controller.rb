@@ -44,4 +44,43 @@ class ApplicationController < Sinatra::Base
     recipe.to_json
   end
 
+  post '/login' do
+    # Find the user by their email or username
+    user = User.find_by(email: params[:emailOrUsername]) || User.find_by(username: params[:emailOrUsername])
+  
+    # If the user exists and the password is correct, log the user in by saving their information in the session
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      { message: 'Logged in successfully' }.to_json
+      redirect "/dashboard/#{user.username}"
+    # If the user doesn't exist or the password is incorrect, return an error message
+    else
+      { error: 'Invalid email/username or password' }.to_json
+    end
+  end
+
+  get '/dashboard/:username' do
+    user = User.find_by(username: params[:username])
+    if user
+      user.to_json
+    else
+      # Handle the case where the user doesn't exist
+    end
+  end
+
+  post '/recipes' do
+    user = User.find_by(username: params[:username])
+    recipe = Recipe.new(
+      user_id: user.id,
+      name: params[:name],
+      ingredients: params[:ingredients],
+      instructions: params[:instructions]
+    )
+    if recipe.save
+      { message: 'Recipe created successfully' }.to_json
+    else
+      { error: 'Error creating recipe' }.to_json
+    end
+  end
+
 end

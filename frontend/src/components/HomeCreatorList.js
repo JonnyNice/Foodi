@@ -13,9 +13,19 @@ function HomeCreatorList({ handleCreatorNameChange }) {
       .then((data) => setUsers(data));
   }, []);
 
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const selectedUsers = shuffle(users);
+
   return (
     <div>
-        {users.map((user, index) => {
+        {selectedUsers.map((user, index) => {
             if (index >= 3) {
                 return;
                 }

@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import { red } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Link } from 'react-router-dom';
 import "./recipeCard.css"
 
 function HomeRecipeCard({recipe}) {
@@ -39,9 +39,9 @@ function HomeRecipeCard({recipe}) {
         <CardContent>
             </CardContent>
         <CardActions disableSpacing>
-            <IconButton aria-label="learn-more">
-            Recipe Page<ArrowForwardIcon />
-        </IconButton>
+        <Link to={`/recipepage?id=${recipe.id}`}>
+              <button>View Recipe</button>
+            </Link>
         </CardActions>
     </Card>
         </div>

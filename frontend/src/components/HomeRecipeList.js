@@ -11,9 +11,19 @@ function RecipeList() {
       .then((recipes) => setRecipes(recipes));
   }, []);
 
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const selectedRecipes = shuffle(recipes)
+
     return(
         <div>
-            {recipes.map((recipe, index) => {
+            {selectedRecipes.map((recipe, index) => {
             if (index >= 3) {
                 return;
                 }

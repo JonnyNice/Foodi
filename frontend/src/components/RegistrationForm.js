@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from  'react-router-dom'
 
-function RegistrationForm() {
+function RegistrationForm({handleDash}) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch("http://localhost:9292/users", {
@@ -24,6 +26,7 @@ function RegistrationForm() {
                 setEmail('');
                 setPassword('');
                 setMessage('User created successfully');
+                window.location.replace(`/login`);
               } else {
                 setMessage('Error creating user');
               }
@@ -59,7 +62,7 @@ function RegistrationForm() {
             onChange={(event) => setPassword(event.target.value)}
           />
           <br />
-          <button type="submit">Sign Up</button>
+          <button onClick={handleDash}type="submit">Sign Up</button>
         </form>
       );
     }

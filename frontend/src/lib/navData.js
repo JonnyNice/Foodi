@@ -64,6 +64,13 @@ export const navData = [
         icon: <HowToRegIcon/>,
         text: "Free Register!",
         link: "/create"
-       }
+       },
 
+    {
+             id: 7,
+             icon: <InfoIcon/>,
+             text: "login",
+             link: "/login"
+            },
+        
 ]

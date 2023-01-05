@@ -1,4 +1,5 @@
 require_relative "./config/environment"
+use Rack::Session::Cookie, secret: SecureRandom.hex
 
 # require_relative './app/controllers/UsersController'
 
