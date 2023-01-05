@@ -11,19 +11,26 @@ function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
   return (
     <div className="willywonka">
     <Card className="anotherone" sx={{ maxWidth: 400 }}>
-      {/* <CardMedia
+      <CardMedia
         component="img"
         sx={{ height: 150 }}
         src={user.image}
         title={user.username}
-      /> */}
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {user.username}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {user.email}
+          {user.bio}
         </Typography>
+      </CardContent>
+      <CardContent>
+      {/* <ul>
+          {user.recipes.map((recipe) => (
+            <li>{recipe.name}</li>
+          ))}
+        </ul> */}
       </CardContent>
       <CardActions>
       <div {...otherProps}>

@@ -21,7 +21,7 @@ const LinkButton = (props) => {
         }
       }}
     >
-      Recipes!
+      <button>View Profile</button>
     </Link>
   );
 };

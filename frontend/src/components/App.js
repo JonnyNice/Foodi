@@ -5,8 +5,6 @@ import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
 import Search from "./Search"
-// ***** ORIGINAL CODE *****
-
 import About from "./About"
 import Home from "./Home"
 import UserHomePage from "./UserHomePage"
@@ -59,7 +57,7 @@ function App() {
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path="/dashboard/:username" >
-            <Dashboard username={username}/>
+            <Dashboard username={username} />
           </Route>
           <Route path= "/userpage">
             <UserHomePage username={username} />

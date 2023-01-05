@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_230126) do
     t.string "name"
     t.string "ingredients"
     t.string "instructions"
+    t.string "image"
     t.integer "cooktime"
     t.boolean "spicy"
     t.boolean "vegan"
@@ -37,6 +38,8 @@ ActiveRecord::Schema.define(version: 2023_01_03_230126) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "image"
+    t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
