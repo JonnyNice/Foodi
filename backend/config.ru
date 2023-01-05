@@ -1,7 +1,11 @@
 require_relative "./config/environment"
-use Rack::Session::Cookie, secret: SecureRandom.hex
+# use Rack::Session::Cookie, secret: SecureRandom.hex
 
-# require_relative './app/controllers/UsersController'
+##test
+use Rack::Session::Cookie, key: '_app_name_session',
+                           path: '/',
+                           secret: SecureRandom.hex
+##test
 
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do
