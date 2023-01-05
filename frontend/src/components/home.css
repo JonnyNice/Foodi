@@ -1,0 +1,32 @@
+.home__header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .home__header img {
+    width: 100%;
+    height: relative;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  
+  .home__content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .home__header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6em;
+    font-family: 'Georgia', serif;
+    color: rgb(255, 255, 255);
+    text-shadow: opacity(255, 255, 255);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+  }
+  

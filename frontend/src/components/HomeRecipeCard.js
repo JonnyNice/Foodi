@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import { red } from '@mui/material/colors';
+import { red, grey, green } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
 import "./recipeCard.css"
@@ -15,10 +15,10 @@ function HomeRecipeCard({recipe}) {
 
     return (
         <div className="home_recipe_container" sx={{ maxWidth: 345 }}>
-            <Card>
+            <Card sx= {{ bgcolor: '#DAD7CD'}}>
                 <CardHeader
                     avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                <Avatar sx={{ bgcolor: '#A3B18A' }} aria-label="recipe">
                     R
                 </Avatar>
             }

@@ -8,17 +8,19 @@ import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import { blue } from '@mui/material/colors';
+import { blue, grey } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import "./creatorCard.css"
 
 function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
     return (
         <div className="homeccard">
-          <Card className="homecc" sx={{ maxWidth: 345 }}>
-            <CardHeader
+
+    <Card className="homecc" sx={{ maxWidth: 345, bgcolor: "#DAD7CD" }}>
+        <CardHeader
+
                 avatar={
-            <Avatar sx={{ bgcolor: blue[500] }} aria-label="user">
+            <Avatar sx={{ bgcolor: '#344E41' }} aria-label="user">
                 C
             </Avatar>
             }
