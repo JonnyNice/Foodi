@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function CreateRecipeForm({ username, addRecipe }) {
+function CreateRecipeForm({ username, setRecipes }) {
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [instructions, setInstructions] = useState('');
@@ -30,9 +30,7 @@ function CreateRecipeForm({ username, addRecipe }) {
               .then((r) => r.json())
               .then((recipes) => {
                 // Add the new recipe to the list of recipes
-                const newRecipe = { name, ingredients, instructions };
-      // Pass the new recipe to the addRecipe prop
-            addRecipe(newRecipe);
+                setRecipes([...recipes, { name, ingredients, instructions }]);
               });
           } else {
             setMessage('Error creating recipe');

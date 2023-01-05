@@ -40,7 +40,7 @@ function Dashboard(props) {
       {/* <img src={user.image} alt={user.name} /> */}
       <h2>Recipes:</h2>
       <RecipeList recipes={recipes} />
-      <CreateRecipeForm username={username} addRecipe={setRecipes} />
+      <CreateRecipeForm username={username} setRecipes={setRecipes} />
     </div>
   );
 }
