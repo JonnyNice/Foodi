@@ -64,3 +64,32 @@ main {
   padding: 25px;
   display: inline-grid;
 }
+
+.recProfImage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.commentbox {
+  outline: 2px solid #dadc70;
+  border-radius: 10px;
+}
+
+.userHomePic {
+  border-radius: 10px;
+  height: 200px;
+}
+
+.userHomePage {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
+.userText {
+  text-align: center;
+}

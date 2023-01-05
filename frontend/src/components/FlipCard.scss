@@ -1,45 +1,70 @@
-*{
-  box-sizing: border-box;
-  line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
-}
 
-img {
-  max-width: 100%;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #444;
-}
-
-.card {
-  position: relative;
-  background: #333;
-  width: 500px;
-  height: 70vh;
-  border-radius: 20px;
-  padding: 2rem;
-  color: #aaa;
-  box-shadow: 0 .55rem .55rem rgba(0,0,0,0.2),
-    0 0 1rem rgba(0,0,0,0.2);
-  overflow: hidden;
-  
-  &__image-container {
-    margin: -2rem -2rem 1rem -2rem;
-  }
-  
-  &__line {
-  opacity: 0;
-  animation: LineFadeIn .8s .8s forwards ease-in;
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
   }
 
-  &__image {
+  .card__image {
+    width: 400px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background: #444;
+  }
+
+  .card {
+    position: relative;
+    background: #333;
+    width: 500px;
+    height: relative;
+    border-radius: 20px;
+    padding: 2rem;
+    color: #aaa;
+    box-shadow: 0 .55rem .55rem rgba(0,0,0,0.2),
+      0 0 1rem rgba(0,0,0,0.2);
+    overflow: hidden;
+    &__image-container {
+      margin: -2rem -2rem 1rem -2rem;
+    }
+
+    &__line {
     opacity: 0;
-    animation: ImageFadeIn .8s 1.4s forwards;
+    animation: LineFadeIn .8s .8s forwards ease-in;
+    }
+
+    &__image {
+      opacity: 0;
+      animation: ImageFadeIn .8s 1.4s forwards;
+    }
+
+    &__title {
+      color: white;
+      margin-top: 0;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      align-items: center;
+      font-size: 40px;
+    }
+
+    &__content {
+      margin-top: -1rem;
+      opacity: 0;
+      animation: ContentFadeIn .8s 1.6s forwards;
+      font-family: 'Courier New', Courier, monospace;
+      padding-left: 15px;
+    }
+    
+    &__svg {
+      position: absolute;
+      left: 0;
+      top: 115px;
+    }
+
   }
 
   &__title {
@@ -61,6 +86,7 @@ img {
     padding-left: 15px;
   }
   
+
   &__svg {
     position: absolute;
     left: 0;
@@ -84,3 +110,4 @@ img {
   50% { opacity: 1; filter: blur(2px); }
   100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
 }
+

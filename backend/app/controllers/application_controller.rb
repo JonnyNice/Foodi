@@ -62,7 +62,7 @@ class ApplicationController < Sinatra::Base
     { message: 'Recipe deleted successfully' }.to_json
   end
 
-  get '/users/:username?' do
+  get '/users/:username' do
     username = params[:username] || params[:username]
     if username == 'all'
       users = User.all
@@ -78,15 +78,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-    # Find the user by their email or username
     user = User.find_by(email: params[:emailOrUsername]) || User.find_by(username: params[:emailOrUsername])
-  
-    # If the user exists and the password is correct, log the user in by saving their information in the session
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       @current_user = user
       redirect "/dashboard/#{user.username}"
-    # If the user doesn't exist or the password is incorrect, return an error message
     else
       { error: 'Invalid email/username or password' }.to_json
     end
@@ -104,20 +100,29 @@ class ApplicationController < Sinatra::Base
   #   end
   # end
   get '/dashboard/:username' do
-    # Find the user by their username
     @current_user = User.find_by(username: params[:username])
-    # If the user exists and is logged in
     if @current_user
-      # Allow the user to access the route
       @current_user.to_json
     else
-      # Handle the case where the user doesn't exist or is not logged in
       status 404
       { error: 'User not found or not logged in' }.to_json
     end
   end
   
-  
+  get '/user/:username' do
+    user = User.find_by(username: params[:username])
+    if user
+      user.to_json
+    else
+      status 404
+      { error: 'User not found' }.to_json
+    end
+  end
+
+  get '/comments/:recipe_id' do
+    comments = Comment.joins(:user).where(recipe_id: params[:recipe_id]).select('comments.*, users.username as username, users.image as image')
+    comments.to_json
+  end
 
   post '/recipes' do
     user = User.find_by(username: params[:username])
@@ -132,6 +137,12 @@ class ApplicationController < Sinatra::Base
     else
       { error: 'Error creating recipe' }.to_json
     end
+  end
+
+  get '/recipes/:id/comments' do
+    recipe = Recipe.find(params[:id])
+    comments = recipe.comments
+    comments.to_json
   end
 
 end

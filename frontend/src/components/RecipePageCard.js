@@ -44,20 +44,15 @@
 // ***** TEST CODE, IS WORKING *****
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
-
 import './HeartEffects.scss'
 import './FlipCard.scss'
+import Comment from './Comment';
 
 
-
-import './RecipePage.css'
-
-
-const RecipePageCard = () => {
+const RecipePageCard = ({ onClick }) => {
   const [recipe, setRecipe] = useState(null);
   const location = useLocation()
   const id = new URLSearchParams(location.search).get('id')
-  
 
   useEffect(() => {
     fetch(`http://localhost:9292/recipes/${id}`)
@@ -72,15 +67,14 @@ const RecipePageCard = () => {
   return (
     <div className='container'>
         <div className='card'>
-            {recipe && 
+            {recipe &&
+            <div>
             <div className="card__image-container">
-                <img className="card__image" src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80" alt={recipe.name} />  
-        
+                <img className="card__image" src={recipe.image} alt={recipe.name} />
         <svg className="card__svg" viewBox="0 0 800 800">
           <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
           <path className="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" strokeWidth="3" fill="transparent"/>
         </svg>
-        
         <div className="card__content">
           <h1 className="card__title">{recipe.name}</h1>
           <h2>Ingredients: {recipe.ingredients}</h2>
@@ -92,6 +86,11 @@ const RecipePageCard = () => {
           <input id="toggle-heart" type="checkbox" />
           <label htmlFor="toggle-heart" aria-label="like">❤</label>
         </div>
+      </div>
+    <div>
+      Comments:
+      <Comment recipeId={recipe.id} onClick={onClick} />
+    </div>
       </div>
       }
     </div>

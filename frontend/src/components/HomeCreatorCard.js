@@ -15,26 +15,28 @@ import "./creatorCard.css"
 function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
     return (
         <div className="homeccard">
+
     <Card className="homecc" sx={{ maxWidth: 345, bgcolor: "#DAD7CD" }}>
         <CardHeader
+
                 avatar={
             <Avatar sx={{ bgcolor: '#344E41' }} aria-label="user">
                 C
             </Avatar>
-        }
+            }
         action={
             <IconButton aria-label="settings">
                 <MoreVertIcon />
             </IconButton>
-        }
+          }
             title={user.username}
-        subheader="September 14, 2016"
+          subheader="September 14, 2016"
         />
-    {/* <CardMedia
-        sx={{ height: 150 }}
-        image={user.image}
-        title={user.name}
-      /> */}
+        <CardMedia
+          sx={{ height: 150 }}
+          image={user.image}
+          title={user.username}
+        />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {user.name}

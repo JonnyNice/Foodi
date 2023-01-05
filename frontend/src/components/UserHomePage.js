@@ -21,12 +21,13 @@ function UserHomePage(props) {
     return <div>Loading...</div>;
   }
   return (
-    <div>
-      <div>
+    <div className="userHomePage" >
+      <div className="userText">
         <h1>{user.username}</h1>
-        <h3>About: {user.email}</h3>
+        <img src={user.image} alt={user.username} className="userHomePic"/>
+        <h4>contact: {user.email}</h4>
+        <h3>About: {user.bio}</h3>
         </div>
-        <img src={user.image} alt={user.username} />
         <h2>Recipes:</h2>
         <RecipeList user={user} />
     </div>
