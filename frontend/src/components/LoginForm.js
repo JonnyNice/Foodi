@@ -6,8 +6,12 @@ function LoginForm({handleDashName}) {
 
   const [password, setPassword] = useState('');
 
+  // *****TESTING*****
+  const [message, setMessage] = useState('');
+  // *****TESTING*****
+
   const handleSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     fetch('http://localhost:9292/login', {
       method: 'POST',
       headers: {
@@ -20,8 +24,15 @@ function LoginForm({handleDashName}) {
       if (responseBody.error) {
         // Handle unsuccessful login
         console.log('Invalid email/username or password');
+         // *****TESTING*****
+        setMessage(responseBody.error);
+         // *****TESTING*****
       } else {
         sessionStorage.setItem('user', JSON.stringify(responseBody));
+         // *****TESTING*****
+        setMessage('User created successfully')
+        window.alert('Success!')
+         // *****TESTING*****
         // window.location.replace(`/dashboard?username=${emailOrUsername}`)
         handleDashName(emailOrUsername);
       }
@@ -30,7 +41,10 @@ function LoginForm({handleDashName}) {
   
 
   return (
-    <>
+     // *****TESTING*****
+     <>
+      {message && <p>{message}</p>}
+    <form onClick={handleSubmit}>
       <label htmlFor="emailOrUsername">
         Email or username:
         <input
@@ -51,7 +65,8 @@ function LoginForm({handleDashName}) {
         />
       </label>
       <br />
-      <button onClick={handleSubmit} type="submit">Log in</button>
+      <button type="submit">Log in</button>
+    </form>
     </>
   );
 }

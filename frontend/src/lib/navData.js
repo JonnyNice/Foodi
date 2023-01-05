@@ -43,6 +43,5 @@ export const navData = [
              icon: <InfoIcon/>,
              text: "login",
              link: "/login"
-            },
-        
+            }
 ]
