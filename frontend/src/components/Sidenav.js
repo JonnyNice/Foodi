@@ -43,7 +43,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 
-// ***** TEST CODE, WORKING ***** 
+// ***** TEST CODE, WORKING *****
 
 export default function NavBar() {
 
@@ -64,13 +64,13 @@ export default function NavBar() {
           </NavLink>
           })}
             <Link className={styles.sideitem}href="https://www.facebook.com/" target="_blank">
-              <FacebookIcon />
+              <FacebookIcon sx={{ color: "#3b5998" }}/>
             </Link>
             <Link className={styles.sideitem}href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-              <YouTubeIcon />
+              <YouTubeIcon sx={{ color: "#FF0000" }}/>
             </Link>
             <Link className={styles.sideitem}href="https://www.instagram.com" target="_blank">
-              <InstagramIcon />
+              <InstagramIcon color='secondary'/>
             </Link>
       </div>
     )

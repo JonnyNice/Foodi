@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useHistory } from  'react-router-dom'
 import './formstyle.css'
 
 function RegistrationForm({handleDash}) {
@@ -9,7 +8,7 @@ function RegistrationForm({handleDash}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         //@@test@@

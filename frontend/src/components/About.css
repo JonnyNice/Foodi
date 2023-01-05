@@ -21,35 +21,30 @@ main {
     font-size: calc(10px + 2vmin);
     color: white;
     text-align: center;
-   
     height: 100%;
     width: 100%;
     z-index: 1;
-   
+  }
+
+
+  .foodiTitle {
+    font-family: Arial;
   }
 
  
 
 
+
   .infoText2 {
     font-size: 300;
-    font-family: cursive;
+    font-family: Arial;
     opacity: .9;
     text-align: center;
 }
 
 
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-/* Base */
-/* body {
-  padding: 0;
-  margin: 0!important;
-  background-color: #000!important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-} */
+
 .typewriter {
     position: relative;
     color: hsl(0, 0%, 68%);
@@ -69,7 +64,7 @@ main {
     width: 0;
   }
   to {
-    width: 500px;
+    width: 300px;
   }
 }
 @keyframes blinkTextCursor {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function CreateRecipeForm({ username, addRecipe }) {
+function CreateRecipeForm({ username, setRecipes }) {
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [instructions, setInstructions] = useState('');
@@ -9,32 +9,30 @@ function CreateRecipeForm({ username, addRecipe }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch('http://localhost:9292/recipes', {
-          method: 'POST',
-          body: JSON.stringify({
+        method: 'POST',
+        body: JSON.stringify({
             username,
             name,
             ingredients,
             instructions,
-          }),
-          headers: {
+        }),
+        headers: {
             'Content-Type': 'application/json',
-          },
+        },
         }).then((response) => {
-          if (response.ok) {
+        if (response.ok) {
             setName('');
             setIngredients('');
             setInstructions('');
             setMessage('Recipe created successfully');
             // Add the new recipe to the list of recipes in the state
             fetch(`http://localhost:9292/recipes?username=${username}`)
-              .then((r) => r.json())
-              .then((recipes) => {
+            .then((r) => r.json())
+            .then((recipes) => {
                 // Add the new recipe to the list of recipes
-                const newRecipe = { name, ingredients, instructions };
-      // Pass the new recipe to the addRecipe prop
-            addRecipe(newRecipe);
-              });
-          } else {
+                setRecipes([...recipes, { name, ingredients, instructions }]);
+            });
+        } else {
             setMessage('Error creating recipe');
         }
         });

@@ -5,8 +5,6 @@ import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
 import Search from "./Search"
-// ***** ORIGINAL CODE *****
-
 import About from "./About"
 import Home from "./Home"
 import UserHomePage from "./UserHomePage"
@@ -20,7 +18,6 @@ import Dashboard from "./Dashboard"
 function App() {
   const history = useHistory();
   const [username, setUsername] = useState('');
-  const [dashName, setDashName] = useState('');
 
   function handleCreatorNameChange(username) {
     setUsername(username);
@@ -60,9 +57,8 @@ function App() {
             <Home handleCreatorNameChange={handleCreatorNameChange} />
           </Route>
           <Route path="/dashboard/:username" >
-            <Dashboard username={username}/>
+            <Dashboard username={username} />
           </Route>
-
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>
@@ -71,7 +67,6 @@ function App() {
           </Route>
           <SHITS_BROKEN />
         </Switch>
-       
         </main>
     </div>
     </>
