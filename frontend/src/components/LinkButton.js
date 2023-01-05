@@ -12,8 +12,8 @@ const LinkButton = (props) => {
     <Link
       {...otherProps}
       to={{
-        pathname: '/userpage',
-        search: `?username=${username}`,
+        pathname: '/user/',
+        search: `${username}`,
       }}
       onClick={() => {
         if (onClick) {

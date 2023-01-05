@@ -1,14 +1,13 @@
 // ***** ORIGINAL CODE *****
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import RecipePageCard from "./RecipePageCard"
-import './RecipePage.css'
 
-const RecipePage = () => {
+const RecipePage = ({onClick}) => {
     
   
   return (
     <div>
-      <RecipePageCard />
+      <RecipePageCard onClick={onClick}/>
     </div>
    
   );

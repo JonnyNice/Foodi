@@ -20,7 +20,7 @@
     position: relative;
     background: #333;
     width: 500px;
-    height: 60vh;
+    height: relative;
     border-radius: 20px;
     padding: 2rem;
     color: #aaa;
@@ -84,5 +84,3 @@
     50% { opacity: 1; filter: blur(2px); }
     100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
   }
-
-  

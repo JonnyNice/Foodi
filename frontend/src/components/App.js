@@ -21,7 +21,7 @@ function App() {
 
   function handleCreatorNameChange(username) {
     setUsername(username);
-    history.push(`/userpage?username=${username}`);
+    history.push(`/users/${username}`);
   }
 
   function handleDashName(username) {
@@ -59,11 +59,11 @@ function App() {
           <Route path="/dashboard/:username" >
             <Dashboard username={username} />
           </Route>
-          <Route path= "/userpage">
+          <Route path= "/user">
             <UserHomePage username={username} />
           </Route>
           <Route path="/recipepage" >
-            <RecipePage />
+            <RecipePage onClick={handleCreatorNameChange} />
           </Route>
           <SHITS_BROKEN />
         </Switch>
