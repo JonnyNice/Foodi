@@ -15,13 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import "./recipeCard.css"
-<<<<<<< HEAD
-import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
-=======
-import { Link } from 'react-router-dom';
->>>>>>> main
 
 
 const ExpandMore = styled((props) => {
