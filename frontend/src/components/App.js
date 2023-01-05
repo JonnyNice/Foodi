@@ -62,7 +62,6 @@ function App() {
           <Route path="/dashboard/:username" >
             <Dashboard username={username}/>
           </Route>
-
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>

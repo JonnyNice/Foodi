@@ -6,7 +6,6 @@ import { MDBBtn, MDBContainer } from 'mdb-react-ui-kit';
 const About = () => {
   return (
     <>
-    
     <div className="aboutHeader">
       <h1 className="typewriter">Foodi</h1>
       <div>

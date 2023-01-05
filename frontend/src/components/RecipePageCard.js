@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
 import './RecipePage.css'
-// import './RecipePageCard.css'
-
 
 const RecipePageCard = () => {
     const [recipe, setRecipe] = useState(null);

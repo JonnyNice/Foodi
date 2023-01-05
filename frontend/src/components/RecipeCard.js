@@ -30,7 +30,6 @@ const ExpandMore = styled((props) => {
   }));
 
 function RecipeCard({recipe}) {
-   
 
     const [expanded, setExpanded] = React.useState(false);
 
