@@ -16,7 +16,7 @@ function RecipeList(props) {
         .then((r) => r.json())
         .then((recipes) => setRecipes(recipes));
     }
-  }, [user]);
+  }, [recipes, user]);
 
   const addRecipe = (recipe) => {
     setRecipes([...recipes, recipe]);
