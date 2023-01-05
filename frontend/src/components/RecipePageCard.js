@@ -44,9 +44,13 @@
 // ***** TEST CODE, IS WORKING *****
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
+
 import './HeartEffects.scss'
 import './FlipCard.scss'
 
+
+
+import './RecipePage.css'
 
 
 const RecipePageCard = () => {

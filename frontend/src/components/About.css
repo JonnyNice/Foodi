@@ -21,18 +21,18 @@ main {
     font-size: calc(10px + 2vmin);
     color: white;
     text-align: center;
-   
     height: 100%;
     width: 100%;
     z-index: 1;
-   
   }
+
 
   .foodiTitle {
     font-family: Arial;
   }
 
  
+
 
 
   .infoText2 {

@@ -20,7 +20,6 @@ import Dashboard from "./Dashboard"
 function App() {
   const history = useHistory();
   const [username, setUsername] = useState('');
-  const [dashName, setDashName] = useState('');
 
   function handleCreatorNameChange(username) {
     setUsername(username);
@@ -62,7 +61,6 @@ function App() {
           <Route path="/dashboard/:username" >
             <Dashboard username={username}/>
           </Route>
-
           <Route path= "/userpage">
             <UserHomePage username={username} />
           </Route>
@@ -71,7 +69,6 @@ function App() {
           </Route>
           <SHITS_BROKEN />
         </Switch>
-       
         </main>
     </div>
     </>

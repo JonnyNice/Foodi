@@ -35,6 +35,7 @@ import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
 const About = () => {
   return (
+
     <div className="aboutHeader">
       <RestaurantMenuIcon fontSize='large' />
       <h1 className='foodiTitle'>FOODI</h1>
