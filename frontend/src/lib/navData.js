@@ -6,6 +6,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ArticleIcon from '@mui/icons-material/Article';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 
 
 export const navData = [
@@ -19,19 +20,19 @@ export const navData = [
     id: 1,
     icon: <MenuBookIcon/>,
     text: "Recipes",
-    link: "recipes"
+    link: "/recipes"
     },
     {
     id: 2,
     icon: <AccountCircleIcon/>,
     text: "Users",
-    link: "users"
+    link: "/users"
     },
     {
      id: 3,
      icon: <InfoIcon/>,
      text: "About",
-     link: "about"
+     link: "/about"
     },
 // {
 //     id: 4,
@@ -57,16 +58,19 @@ export const navData = [
      text: "Recipe Page",
      link: "/recipepage"
     },
+
     {
-             id: 6,
+        id: 6,
+        icon: <HowToRegIcon/>,
+        text: "Free Register!",
+        link: "/create"
+       },
+
+    {
+             id: 7,
              icon: <InfoIcon/>,
              text: "login",
              link: "/login"
             },
-        {
-            id: 7,
-            icon: <ArticleIcon/>,
-            text: "create",
-            link: "/create"
-           }
+        
 ]

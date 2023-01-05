@@ -50,8 +50,8 @@ main {
   justify-content: center;
   min-height: 100vh;
 } */
-h1 {
-    /* position: absolute; */
+.typewriter {
+    position: relative;
     color: hsl(0, 0%, 68%);
     font-weight: bold!important;
     font-family: "Anonymous Pro", monospace!important;
@@ -79,4 +79,9 @@ h1 {
   to {
     border-right-color: transparent;
   }
+}
+
+.detailedInfo {
+  display: flex;
+  align-items: center;
 }

@@ -1,9 +1,109 @@
-.recipe_container {
-    align-items: center;
+.text {
+
+    color: #ff9;
+    text-align: center;
 }
 
-main {
-    position: absolute;
-    display: inline-grid;
-    z-index: 2;
+main RecipePage{
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    flex-direction: column;
 }
+
+.aboutHeader {
+    padding-top: 10px;
+    background-color: #282c34;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    text-align: center;
+    opacity:0.8;
+   
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+   
+  }
+
+  .infoText2 {
+    font-size: 300;
+    font-family: cursive;
+    opacity: .9;
+    text-align: center;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+/* Base */
+/* body {
+  padding: 0;
+  margin: 0!important;
+  background-color: #000!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+} */
+.typewriters {
+    position: relative;
+    color: hsl(0, 0%, 68%);
+    font-weight: bold!important;
+    font-family: "Anonymous Pro", monospace!important;
+    letter-spacing: 7px!important;
+    overflow: hidden;
+    border-right: 2px solid hsl(0, 0%, 80%);
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 502px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 10%, 60%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.wholeDivContainer {
+    position: relative;
+    background-color: #9F2B00;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.wholeDivContainer h1 {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 0;
+    color: violet;
+  }
+
+.infoText2:hover {
+    animation: blink;
+}
+  /* .recipe-card h2 {
+    font-size: 16px;
+    margin: 10px 0;
+  } */
