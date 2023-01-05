@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { useHistory } from  'react-router-dom'
 
 function RegistrationForm({handleDash}) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch("http://localhost:9292/users", {

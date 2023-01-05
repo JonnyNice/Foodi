@@ -52,7 +52,7 @@ function RecipeCard({recipe}) {
             </IconButton>
           }
           title={recipe.name}
-          subheader="September 14, 2016"
+          subheader={`created by: ${recipe.user.username}`}
         />
         <CardMedia
           component="img"
