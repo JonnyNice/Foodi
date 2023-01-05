@@ -5,6 +5,8 @@ import { Switch, Route } from "react-router-dom";
 import Recipes from "./Recipes"
 import Creators from "./Creators"
 import Search from "./Search"
+// ***** ORIGINAL CODE *****
+
 import About from "./About"
 import Home from "./Home"
 import UserHomePage from "./UserHomePage"
@@ -31,8 +33,9 @@ function App() {
   }
 
   return (
+    <>
     <div className="collapse">
-      <Sidenav />
+    <Sidenav />
       <main>
         <Switch>
           <Route path="/recipes" >
@@ -68,9 +71,10 @@ function App() {
           </Route>
           <SHITS_BROKEN />
         </Switch>
-        {/* TEST CODE */}
+       
         </main>
     </div>
+    </>
   );
 }
 

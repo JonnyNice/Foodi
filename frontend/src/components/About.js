@@ -8,7 +8,7 @@ const About = () => {
     <>
     
     <div className="aboutHeader">
-      <h1>MyRecipe</h1>
+      <h1 className="typewriter">Foodi</h1>
       <div>
       <h4 className="infoText2">An application that allows users to search for recipes and their creators, and save them to a list of recipes</h4>
       <h5 className='infoText2'>Created By: William, Ian and Jason</h5>
