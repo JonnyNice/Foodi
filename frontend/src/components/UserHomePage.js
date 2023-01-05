@@ -28,7 +28,7 @@ function UserHomePage(props) {
         </div>
         {/* <img src={user.image} alt={user.name} /> */}
         <h2>Recipes:</h2>
-        <RecipeList username={user.username} />
+        <RecipeList user={user} />
     </div>
   );
 }
