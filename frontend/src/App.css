@@ -72,16 +72,16 @@ main {
 
 .userHomePic {
   border-radius: 10px;
+  height: 200px;
 }
 
 .userHomePage {
   position: absolute;
-        top: 80%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        align-items: center;
-
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
 }
 
 .userText {
