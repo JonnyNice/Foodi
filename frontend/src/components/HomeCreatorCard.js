@@ -23,11 +23,11 @@ function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
                 C
             </Avatar>
             }
-        action={
-            <IconButton aria-label="settings">
-                <MoreVertIcon />
-            </IconButton>
-          }
+        // action={
+        //     <IconButton aria-label="settings">
+        //         <MoreVertIcon />
+        //     </IconButton>
+        //   }
             title={user.username}
           subheader="September 14, 2016"
         />

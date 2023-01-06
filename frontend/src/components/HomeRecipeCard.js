@@ -22,11 +22,11 @@ function HomeRecipeCard({recipe}) {
                     R
                 </Avatar>
             }
-        action={
-            <IconButton aria-label="settings">
-                <MoreVertIcon />
-            </IconButton>
-        }
+        // action={
+        //     <IconButton aria-label="settings">
+        //         <MoreVertIcon />
+        //     </IconButton>
+        // }
             title={recipe.name}
             subheader={`Created By: ${recipe.user.username}`}
         />
