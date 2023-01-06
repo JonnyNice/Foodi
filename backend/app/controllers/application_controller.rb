@@ -175,8 +175,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/comments' do
-    user_id = params[:user_id]  # Retrieve the user_id from the request parameters
-    if user_id.nil?  # If user_id is nil, return a 422 status code
+    user_id = params[:user_id]
+    if user_id.nil?
       status 422
     else
       comment = Comment.new(comment: params[:comment], user_id: user_id, recipe_id: params[:recipe_id])

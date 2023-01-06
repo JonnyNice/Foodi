@@ -17,6 +17,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
+    "sass": "^1.57.1",
     "securerandom": "^0.0.2",
     "styled-components": "^5.3.6",
     "typewriter-effect": "^2.19.0",
