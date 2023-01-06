@@ -9,14 +9,14 @@ const Home = ({ handleCreatorNameChange }) => {
     <div className="App">
       <div className="home__header">
         <img src={homepic} alt="Header image" />
-        <div className="home__header-text">Foodi</div>
+        <div className="home__header-text">Foodi.</div>
       </div>
       <div className="home__content">
         <div className="middle-section">Featured Recipes
           <HomeRecipeList />
         </div>
         <div className='spacer'>--------------</div>
-        <div className="bottom-section">Featured Creators
+        <div className="bottom-section">Featured Foodies
           <HomeCreatorList handleCreatorNameChange={handleCreatorNameChange} />
         </div>
       </div>

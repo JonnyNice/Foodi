@@ -8,4 +8,5 @@
 .home_recipe_container {
     padding: 25px;
     display: inline-grid;
+    color: black;
 }

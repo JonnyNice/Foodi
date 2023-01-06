@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import { blue, grey } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import "./creatorCard.css"
 
@@ -16,7 +15,7 @@ function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
     return (
         <div className="homeccard">
 
-    <Card className="homecc" sx={{ maxWidth: 345, bgcolor: "#DAD7CD" }}>
+    <Card className="homecc" sx={{ maxWidth: 600, bgcolor: "#DAD7CD", paddingLeft:2, paddingRight:2, borderRadius: 5 }}>
         <CardHeader
 
                 avatar={
@@ -41,7 +40,7 @@ function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
         <Typography gutterBottom variant="h5" component="div">
           {user.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2">
           {user.bio}
         </Typography>
       </CardContent>

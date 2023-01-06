@@ -65,7 +65,7 @@
       top: 115px;
     }
 
-  }
+  
 
   &__title {
     color: white;
@@ -92,7 +92,7 @@
     left: 0;
     top: 115px;
   }
-}
+  }
 
 @keyframes LineFadeIn {
   0% { opacity: 0; d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 "); stroke: #fff; }

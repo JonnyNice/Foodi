@@ -10,7 +10,7 @@ import LinkButton from './/LinkButton'
 function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
   return (
     <div className="willywonka">
-    <Card className="anotherone" sx={{ maxWidth: 400 }}>
+    <Card className="anotherone" sx={{ maxWidth: 400, bgcolor: "#DAD7CD" }}>
       <CardMedia
         component="img"
         sx={{ height: 150 }}
@@ -21,7 +21,7 @@ function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
         <Typography gutterBottom variant="h5" component="div">
           {user.username}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2">
           {user.bio}
         </Typography>
       </CardContent>

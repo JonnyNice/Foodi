@@ -14,3 +14,19 @@
     padding: 35px;
     display: inline-grid;
 }
+
+.creator_view_recipe{
+    /* width: 100%; */
+    /* padding: 1rem; */
+    background-color: #344E41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  .MuiTypography-body2 {
+    color: black;
+    /* font-family: Garamond; */
+  }

@@ -39,10 +39,10 @@ function RecipeCard({recipe}) {
 
     return (
         <div className="recipe_container">
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, bgcolor: '#DAD7CD' }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            <Avatar sx={{ bgcolor: '#A3B18A' }} aria-label="recipe">
               R
             </Avatar>
           }
@@ -61,7 +61,7 @@ function RecipeCard({recipe}) {
           alt={recipe.name}
         />
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2">
             This impressive paella is a perfect party dish and a fun meal to cook
             together with your guests. Add 1 cup of frozen peas along with the mussels,
             if you like.
@@ -75,7 +75,7 @@ function RecipeCard({recipe}) {
             <ShareIcon />
           </IconButton>
             <Link to={`/recipepage?id=${recipe.id}`}>
-              <button>View Recipe</button>
+              <button className="creator_view_recipe">View Recipe</button>
             </Link>
           <ExpandMore
             expand={expanded}
