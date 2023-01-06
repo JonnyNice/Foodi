@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import './recipeCard.css'
 
 const LinkButton = (props) => {
   const { username, onClick, ...otherProps } = props;
@@ -21,7 +22,7 @@ const LinkButton = (props) => {
         }
       }}
     >
-      <button>View Profile</button>
+      <button className="creator_view_recipe">View Profile</button>
     </Link>
   );
 };

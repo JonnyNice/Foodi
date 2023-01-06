@@ -8,7 +8,7 @@ const About = () => {
 
     <div className="aboutHeader">
       <RestaurantMenuIcon fontSize='large' />
-      <h1 className='foodiTitle'>FOODI</h1>
+      <h1 className='foodiTitle'>Foodi.</h1>
       <h4 className='infoText2'>An application that allows users to search for recipes and their creators, and save them to a list of recipes</h4>
       <div className='infoText2'>Created By:
       <Typewriter

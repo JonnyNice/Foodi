@@ -46,7 +46,7 @@ function LoginForm({handleDashName}) {
       {message && <p>{message}</p>}
     <form onClick={handleSubmit}>
       <label htmlFor="emailOrUsername">
-        Email or username:
+        Username:
         <input
           type="text"
           id="emailOrUsername"

@@ -1,22 +1,19 @@
 .sidenav {
     width: 210px;
     transition: width 0.4s ease-in-out;
-    height: 100vh;
+    height: relative;
     background-color: #344E41;
     padding-top: 28px;
+    position: sticky;
+    z-index: 2;
 }
 .sidenavClosed {
     composes: sidenav;
     transition: width 0.2s ease-in-out;
     width: 60px;
+    z-index: 2;
+    position: relative;
 }
-
-/* TEST CODE */
-/* .linkText:hover{
-    transform: rotate(0deg);
-    transition: none;
-} */
-/* TEST CODE */
 
 .sideitem {
     display: flex;
@@ -28,22 +25,13 @@
     overflow: hidden;
 }
 
-
-/* TEST CODE */
-/* .sideitem:hover {
-    transform: rotate(360deg);
-    transition: all 0.23s ease-in-out;
-  } */
-
-/* TEST CODE */
-
 .linkText {
     padding-left: 16px;
 
 }
 .linkTextClosed {
-        composes: linkText;
-        visibility: hidden;
+    composes: linkText;
+    visibility: hidden;
 }
 
 .sideitem:hover {

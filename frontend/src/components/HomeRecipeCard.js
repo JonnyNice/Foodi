@@ -15,7 +15,7 @@ function HomeRecipeCard({recipe}) {
 
     return (
         <div className="home_recipe_container" sx={{ maxWidth: 345 }}>
-            <Card sx= {{ bgcolor: '#DAD7CD'}}>
+            <Card sx= {{ bgcolor: '#DAD7CD', paddingLeft:2, paddingRight: 2, height: 350, borderRadius: 5}}>
                 <CardHeader
                     avatar={
                 <Avatar sx={{ bgcolor: '#A3B18A' }} aria-label="recipe">
@@ -40,7 +40,7 @@ function HomeRecipeCard({recipe}) {
             </CardContent>
         <CardActions disableSpacing>
         <Link to={`/recipepage?id=${recipe.id}`}>
-            <button>View Recipe</button>
+                <button className="creator_view_recipe">View Recipe</button>
             </Link>
         </CardActions>
     </Card>

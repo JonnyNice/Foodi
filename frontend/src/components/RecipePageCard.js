@@ -6,6 +6,8 @@ import Comment from './Comment';
 
 
 const RecipePageCard = ({ onClick }) => {
+  const [clicked, setClicked] = useState(false);
+  const [likes, setLikes] = useState(0);
   const [recipe, setRecipe] = useState(null);
   const location = useLocation()
   const id = new URLSearchParams(location.search).get('id')
@@ -14,16 +16,37 @@ const RecipePageCard = ({ onClick }) => {
   const [comments, setComments] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
 
-
   useEffect(() => {
     fetch(`http://localhost:9292/recipes/${id}`)
       .then((response) => response.json())
       .then((recipe) => {
-        console.log(recipe)
-        setRecipe(recipe)
+        setRecipe(recipe);
+        setLikes(recipe.likes);
       }
-    )
-  }, [id])
+    );
+
+    fetch(`http://localhost:9292/recipes/${id}/likes`)
+      .then((response) => response.json())
+      .then((recipe) => {
+        setLikes(recipe.likes);
+      }
+    );
+  }, [id]);
+
+  const handleLikeClick = () => {
+    const newLikes = clicked ? likes - 1 : likes + 1;
+    fetch(`http://localhost:9292/recipes/${id}/likes`, {
+      method: 'PATCH',
+      body: JSON.stringify({ id:id, likes: newLikes }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(recipe => {
+      setLikes(recipe.likes);
+    });
+    setClicked(!clicked);
+  };
+
 
   const addComment = (newComment) => {
     setComments([...comments, newComment]);
@@ -90,7 +113,7 @@ const RecipePageCard = ({ onClick }) => {
           <h2>{recipe.Vegan? 'Vegan' : 'Not Vegan' }</h2>
           <h2>{recipe.contains_thc? 'Contains a lot of THC' : 'No trace of THC found' }</h2>
           <input id="toggle-heart" type="checkbox" />
-          <label htmlFor="toggle-heart" aria-label="like">❤</label>
+          <label htmlFor="toggle-heart" aria-label="like" onClick={handleLikeClick} className={clicked ? "grey" : ""}>❤ {likes}</label>
         </div>
       </div>
     <div>
@@ -100,11 +123,6 @@ const RecipePageCard = ({ onClick }) => {
       </div>
       }
     </div>
-    
-      {/* Display list of comments for the recipe */}
-      {/* {props.comments.map((comment) => (
-        <div key={comment.id}>{comment.comment} - {comment.username}</div>
-      ))} */}
     </div>
       <div>
         <form onSubmit={(event) => handleSubmit(event, id)}>
@@ -131,3 +149,6 @@ const RecipePageCard = ({ onClick }) => {
 }
 
 export default RecipePageCard
+
+
+

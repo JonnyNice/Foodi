@@ -119,6 +119,12 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  patch '/recipes/:id/likes' do
+    recipe = Recipe.find(params[:id])
+    recipe.update(likes: params[:likes])
+    recipe.to_json
+  end
+
   get '/recipes/:id/comments' do
     recipe = Recipe.find(params[:id])
     comments = recipe.comments
