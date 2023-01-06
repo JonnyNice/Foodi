@@ -3,31 +3,22 @@ class ApplicationController < Sinatra::Base
   enable :sessions
   set :session_secret, SecureRandom.hex
 
-  ##TEST##
-  ##The before block runs before each request and checks for the presence of the user_id
-  ##in the session. If it exists, it sets the @current_user variable to the user with that ID.
   before do
     if session[:user_id]
       @current_user = User.find(session[:user_id])
     end
   end
-  ##The /protected_route route checks for the presence of the @current_user variable. If it exists, it redirects the user to the 
-  ##/dashboard/:username route, where :username is the user's username. If the @current_user variable is not set, it redirects the user to the /login route.
+
   get '/protected_route' do
-    ##test
     @current_user = User.find(session[:user_id])
-    ##test - so far no change
     puts "session[:user_id]: #{session[:user_id]}"
     if @current_user.save
-      ##.save is also a test - so far no change
-      # The user is logged in, so allow them to access the route
       redirect "/dashboard/#{@current_user.username}"
     else
-      # The user is not logged in, so redirect them to the login page or return an error
       redirect '/login'
     end
   end
-  ##test##
+
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
@@ -88,17 +79,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  ##TESTING###
-  # get '/dashboard/:username' do
-  #   user = User.find_by(username: params[:username])
-  #   if user
-  #     user.to_json
-  #   else
-  #     # Handle the case where the user doesn't exist
-  #     status 404
-  #   { error: 'User not found' }.to_json
-  #   end
-  # end
   get '/dashboard/:username' do
     @current_user = User.find_by(username: params[:username])
     if @current_user
@@ -108,7 +88,7 @@ class ApplicationController < Sinatra::Base
       { error: 'User not found or not logged in' }.to_json
     end
   end
-  
+
   get '/user/:username' do
     user = User.find_by(username: params[:username])
     if user
@@ -144,5 +124,78 @@ class ApplicationController < Sinatra::Base
     comments = recipe.comments
     comments.to_json
   end
+
+  get '/comments/:user_id' do
+    user_id = params[:user_id]
+    comments = Comment.where(user_id: user_id)
+    comments.to_json
+  end
+
+  patch '/comments/:id' do
+    id = params[:id]
+    comment = Comment.find_by(id: id)
+    if comment
+      comment.update(comment: params[:comment])
+      updated_comments = Comment.where(user_id: comment.user_id)
+      return updated_comments.to_json
+    else
+      status 404
+    end
+  end
+
+  get '/comments_with_recipes/:user_id' do
+    user_id = params[:user_id]
+    comments = Comment.where(user_id: user_id).includes(:recipe)
+    comments_with_recipes = comments.map do |comment|
+      {
+        id: comment.id,
+        comment: comment.comment,
+        recipe_id: comment.recipe_id,
+        recipe_title: comment.recipe.name
+      }
+    end
+    comments_with_recipes.to_json
+  end
+
+  patch '/users/:id' do
+    id = params[:id]
+    user = User.find_by(id: id)
+    if user
+      user.update(image: params[:image], bio: params[:bio])
+      redirect '/users'
+    else
+      status 404
+    end
+  end
+
+  post '/comments' do
+    user_id = params[:user_id]  # Retrieve the user_id from the request parameters
+    if user_id.nil?  # If user_id is nil, return a 422 status code
+      status 422
+    else
+      comment = Comment.new(comment: params[:comment], user_id: user_id, recipe_id: params[:recipe_id])
+      if comment.save
+        status 201
+      else
+        status 422
+      end
+    end
+  end
+
+  get '/users/:username' do
+    user = User.find_by(username: params[:username])
+    if user
+      user.to_json
+    else
+      status 404
+      { error: 'User not found' }.to_json
+    end
+  end
+
+  delete '/comments/:id' do
+    comment = Comment.find(params[:id])
+    comment.destroy
+  end
+  
 
 end

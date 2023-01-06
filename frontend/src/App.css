@@ -48,7 +48,7 @@ main {
   padding: 20px;
   color: white;
   border-radius: 20px;
-  
+
 }
 
 .bottom-section{
@@ -92,4 +92,12 @@ main {
 
 .userText {
   text-align: center;
+}
+
+.spacer2 {
+  padding-top: 7px;
+}
+
+link {
+  color: red;
 }

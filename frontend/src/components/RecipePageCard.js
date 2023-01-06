@@ -1,47 +1,3 @@
-// ***** ORIGINAL CODE *****
-// import React, { useEffect, useState } from 'react'
-// import {useLocation} from "react-router-dom"
-// import './RecipePage.css'
-// import './RecipePageCard.css'
-
-
-// const RecipePageCard = () => {
-//     const [recipe, setRecipe] = useState(null);
-//     const location = useLocation()
-//     const id = new URLSearchParams(location.search).get('id')
-  
-//     useEffect(() => {
-//       fetch(`http://localhost:9292/recipes/${id}`)
-//         .then((response) => response.json())
-//         .then((recipe) => {
-//         console.log(recipe)
-//         setRecipe(recipe)}
-//         )
-//     }, [id])
-  
-
-//   return (
-//      <div className='wholeDivContainer'>
-//       {recipe && 
-//       <div className="aboutHeader">
-//       <h1 className="typewriters">{recipe.name}</h1>
-//       <h3 className="infoText2">Created By: {recipe.user.username}</h3>
-//       <h3 className="infoText2">Ingredients: {recipe.ingredients}</h3>
-//       <h3 className="infoText2">Instructions: {recipe.instructions}</h3>
-//       <h4 className="infoText2">Cooktime: {recipe.cooktime} minutes</h4>
-//       <h5 className="infoText2">Spicy: {recipe.spicy? 'Yes' : 'No'}</h5>
-//       <h5 className="infoText2">Vegan: {recipe.Vegan? 'Yes' : 'Hell No'}</h5>
-//       <h5 className="infoText2">{recipe.contains_thc? 'Contains a lot of THC' : 'No THC found :('}</h5>
-//       </div>}
-//     </div>
-//   );
-// }
-
-// export default RecipePageCard
-// ***** ORIGINAL CODE *****
-
-
-// ***** TEST CODE, IS WORKING *****
 import React, { useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
 import './HeartEffects.scss'
@@ -53,6 +9,11 @@ const RecipePageCard = ({ onClick }) => {
   const [recipe, setRecipe] = useState(null);
   const location = useLocation()
   const id = new URLSearchParams(location.search).get('id')
+  const [comment, setComment] = useState('');
+  const [username, setUsername] = useState('')
+  const [comments, setComments] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   useEffect(() => {
     fetch(`http://localhost:9292/recipes/${id}`)
@@ -64,7 +25,52 @@ const RecipePageCard = ({ onClick }) => {
     )
   }, [id])
 
+  const addComment = (newComment) => {
+    setComments([...comments, newComment]);
+  };
+
+  const handleSubmit = (event, id) => {
+    event.preventDefault();
+    fetch(`http://localhost:9292/users?username=${username}`)
+      .then((response) => response.json())
+      .then((users) => {
+        const user = users.find(user => user.username === username);
+        if (user) {
+          const user_id = user.id;
+          fetch('http://localhost:9292/comments', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              comment,
+              user_id,
+              recipe_id: id
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                const newComment = {
+                  comment,
+                  user_id,
+                  recipe_id: id
+                };
+                addComment(newComment);
+                setComment('');
+                setUsername('');
+                setErrorMessage('');
+              }
+            });
+        }
+        else {
+          setErrorMessage('Username not found');
+          return;
+        }
+      });
+  };
+
   return (
+    <div>
     <div className='container'>
         <div className='card'>
             {recipe &&
@@ -89,11 +95,37 @@ const RecipePageCard = ({ onClick }) => {
       </div>
     <div>
       Comments:
-      <Comment recipeId={recipe.id} onClick={onClick} />
+      <Comment recipeId={recipe.id} onClick={onClick} onAddComment={addComment} />
     </div>
       </div>
       }
     </div>
+    
+      {/* Display list of comments for the recipe */}
+      {/* {props.comments.map((comment) => (
+        <div key={comment.id}>{comment.comment} - {comment.username}</div>
+      ))} */}
+    </div>
+      <div>
+        <form onSubmit={(event) => handleSubmit(event, id)}>
+        {errorMessage ? <p>{errorMessage}</p> : null}
+            <label htmlFor="comment-input">Comment:</label>
+            <input
+              id="comment-input"
+              type="text"
+              value={comment}
+              onChange={(event) => setComment(event.target.value)}
+            />
+            <label htmlFor="username-input">Username:</label>
+            <input
+              id="username-input"
+              type="text"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
     </div>
   );
 }
