@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_230126) do
     t.boolean "vegan"
     t.boolean "contains_thc"
     t.integer "user_id"
+    t.integer "likes"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
