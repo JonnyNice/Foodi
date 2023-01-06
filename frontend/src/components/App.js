@@ -14,6 +14,7 @@ import { useHistory } from 'react-router-dom';
 import RecipePage from './RecipePage';
 import LoginForm from './LoginForm';
 import Dashboard from "./Dashboard"
+import Footer from "./Footer"
 
 function App() {
   const history = useHistory();
@@ -67,6 +68,9 @@ function App() {
           </Route>
           <SHITS_BROKEN />
         </Switch>
+        <div>
+        <Footer />
+        </div>
         </main>
     </div>
     </>
