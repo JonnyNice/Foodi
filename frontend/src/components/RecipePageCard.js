@@ -111,9 +111,9 @@ const RecipePageCard = ({ onClick }) => {
           <h2>Instructions: {recipe.instructions}</h2>
           <h2>{recipe.spicy? 'Spicy' : 'Not Spicy' }</h2>
           <h2>{recipe.Vegan? 'Vegan' : 'Not Vegan' }</h2>
-          <h2>{recipe.contains_thc? 'Contains a lot of THC' : 'No trace of THC found' }</h2>
+          {/* <h2>{recipe.contains_thc? 'Contains a lot of THC' : 'No trace of THC found' }</h2> */}
           <input id="toggle-heart" type="checkbox" />
-          <label htmlFor="toggle-heart" aria-label="like" onClick={handleLikeClick} className={clicked ? "grey" : ""}>❤ {recipe.rating}</label>
+          <label htmlFor="toggle-heart" aria-label="like" onClick={handleLikeClick} className={clicked ? "grey" : ""}>❤ {likes}</label>
         </div>
       </div>
     <div>

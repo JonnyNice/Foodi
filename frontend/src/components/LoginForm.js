@@ -7,9 +7,7 @@ function LoginForm({handleDashName}) {
 
   const [password, setPassword] = useState('');
 
-  // *****TESTING*****
   const [message, setMessage] = useState('');
-  // *****TESTING*****
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,16 +23,11 @@ function LoginForm({handleDashName}) {
       if (responseBody.error) {
         // Handle unsuccessful login
         console.log('Invalid email/username or password');
-         // *****TESTING*****
         setMessage(responseBody.error);
-         // *****TESTING*****
       } else {
         sessionStorage.setItem('user', JSON.stringify(responseBody));
-         // *****TESTING*****
         setMessage('User created successfully')
         window.alert('Success!')
-         // *****TESTING*****
-        // window.location.replace(`/dashboard?username=${emailOrUsername}`)
         handleDashName(emailOrUsername);
       }
     });

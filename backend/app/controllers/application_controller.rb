@@ -144,9 +144,9 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  patch '/recipes/:id/rating' do
+  patch '/recipes/:id/likes' do
     recipe = Recipe.find(params[:id])
-    recipe.update(rating: params[:rating])
+    recipe.update(likes: params[:likes])
     recipe.to_json
   end
 
@@ -213,6 +213,5 @@ class ApplicationController < Sinatra::Base
     comment = Comment.find(params[:id])
     comment.destroy
   end
-  
 
 end
