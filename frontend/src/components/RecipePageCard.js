@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import {useLocation} from "react-router-dom"
-import './HeartEffects.scss'
-import './FlipCard.scss'
+import React, { useEffect, useState } from 'react';
+import {useLocation} from "react-router-dom";
+import './CSS/HeartEffects.scss';
+import './CSS/FlipCard.scss';
+import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import Comment from './Comment';
-
 
 const RecipePageCard = ({ onClick }) => {
   const [clicked, setClicked] = useState(false);
@@ -46,7 +46,6 @@ const RecipePageCard = ({ onClick }) => {
     });
     setClicked(!clicked);
   };
-
 
   const addComment = (newComment) => {
     setComments([...comments, newComment]);
@@ -106,6 +105,7 @@ const RecipePageCard = ({ onClick }) => {
         </svg>
         <div className="card__content">
           <h1 className="card__title">{recipe.name}</h1>
+          <h2>Created by: {recipe.user.username}</h2>
           <h2>Ingredients: {recipe.ingredients}</h2>
           <h2>Cooktime: {recipe.cooktime} minutes</h2>
           <h2>Instructions: {recipe.instructions}</h2>
@@ -113,7 +113,7 @@ const RecipePageCard = ({ onClick }) => {
           <h2>{recipe.Vegan? 'Vegan' : 'Not Vegan' }</h2>
           <h2>{recipe.contains_thc? 'Contains a lot of THC' : 'No trace of THC found' }</h2>
           <input id="toggle-heart" type="checkbox" />
-          <label htmlFor="toggle-heart" aria-label="like" onClick={handleLikeClick} className={clicked ? "grey" : ""}>❤ {likes}</label>
+          <label htmlFor="toggle-heart" aria-label="like" onClick={handleLikeClick} className={clicked ? "grey" : ""}>❤ {recipe.rating}</label>
         </div>
       </div>
     <div>
@@ -124,6 +124,16 @@ const RecipePageCard = ({ onClick }) => {
       }
     </div>
     </div>
+    <div className='spacer2'>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                    <RestaurantMenuIcon fontSize='small'/>
+                </div>
       <div>
         <form onSubmit={(event) => handleSubmit(event, id)}>
         {errorMessage ? <p>{errorMessage}</p> : null}

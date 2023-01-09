@@ -1,27 +1,47 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  enable :sessions
-  set :session_secret, SecureRandom.hex
+  # enable :sessions
+  # set :session_secret, SecureRandom.hex
 
-  before do
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-    end
-  end
+  # before do
+  #   if session[:user_id]
+  #     @current_user = User.find(session[:user_id])
+  #   end
+  # end
 
-  get '/protected_route' do
-    @current_user = User.find(session[:user_id])
-    puts "session[:user_id]: #{session[:user_id]}"
-    if @current_user.save
-      redirect "/dashboard/#{@current_user.username}"
+  # get '/protected_route' do
+  #   @current_user = User.find(session[:user_id])
+  #   puts "session[:user_id]: #{session[:user_id]}"
+  #   if @current_user.save
+  #     redirect "/dashboard/#{@current_user.username}"
+  #   else
+  #     redirect '/login'
+  #   end
+  # end
+
+  # get "/" do
+  #   { message: "Good luck with your project!" }.to_json
+  # end
+
+  get "/users" do
+    comment = params[:comment]
+    if comment.nil? || comment == 'all'
+      users = User.all
     else
-      redirect '/login'
+      users = User.joins(:comments).where(comments: { comment: comment })
     end
+    users.to_json
   end
 
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+  # get '/recipes' do
+  #   comments = params[:comments]
+  #   if comments.nil? || comments == 'all'
+  #     recipes = Recipe.all
+  #   else
+  #     recipes = Recipe.joins(:comment).where(comments: { comment_id: comment_id })
+  #   end
+  #   recipes.to_json
+  # end
 
   post '/users' do
     user = User.create(username: params[:username], email: params[:email], password: params[:password])
@@ -32,9 +52,14 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  get "/users" do
-    users = User.all
-    users.to_json
+  get '/comments' do
+    username = params[:username]
+    if username.nil? || username == 'all'
+      comments = Comment.all
+    else
+      comments = Comment.joins(:user).where(users: { username: username })
+    end
+    comments.to_json
   end
 
   get '/recipes' do
@@ -119,9 +144,9 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  patch '/recipes/:id/likes' do
+  patch '/recipes/:id/rating' do
     recipe = Recipe.find(params[:id])
-    recipe.update(likes: params[:likes])
+    recipe.update(rating: params[:rating])
     recipe.to_json
   end
 
@@ -147,20 +172,6 @@ class ApplicationController < Sinatra::Base
     else
       status 404
     end
-  end
-
-  get '/comments_with_recipes/:user_id' do
-    user_id = params[:user_id]
-    comments = Comment.where(user_id: user_id).includes(:recipe)
-    comments_with_recipes = comments.map do |comment|
-      {
-        id: comment.id,
-        comment: comment.comment,
-        recipe_id: comment.recipe_id,
-        recipe_title: comment.recipe.name
-      }
-    end
-    comments_with_recipes.to_json
   end
 
   patch '/users/:id' do

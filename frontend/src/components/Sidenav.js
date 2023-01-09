@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
 
-import { navData } from "../lib/navData";
-import styles from "./sidenav.module.css"
+import { navData } from "./navData";
+import styles from "./CSS/sidenav.module.css"
 import { useState } from "react";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
@@ -12,39 +12,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-// ***** ORIGINAL CODE *****
-// const NavBar = () => {
-//   return (
-//     <div className="navBar">
-//       <NavLink id="first_item" to="/" exact>
-//         RecipeApp🎂
-//       </NavLink>
-//       <NavLink className="navItem" to="/search" exact>
-//         Search
-//       </NavLink>
-//       <NavLink className="navItem" to="/recipes" exact>
-//         Recipes
-//       </NavLink>
-//       <NavLink className="navItem" to="/creators" exact>
-//         Creators
-//       </NavLink>
-//       <NavLink className="navItem" to="/about" exact>
-//         About
-//       </NavLink>
-//     </div>
-//   )
-// }
-
-// export default NavBar;
-// ***** ORIGINAL CODE *****
-
-
-
-
-
-
-// ***** TEST CODE, WORKING *****
-
 export default function NavBar() {
 
   const [open, setopen] = useState(false)
@@ -52,7 +19,7 @@ export default function NavBar() {
         setopen(!open)
     }
 
-       return (
+    return (
       <div className={open?styles.sidenav:styles.sidenavClosed}>
           <button className={styles.menuBtn} onClick={toggleOpen}>
               {open? <KeyboardDoubleArrowLeftIcon />: <KeyboardDoubleArrowRightIcon />}

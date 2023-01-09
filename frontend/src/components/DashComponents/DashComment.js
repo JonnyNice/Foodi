@@ -37,7 +37,7 @@ function DashComment({ comment, updateComment, id, name, deleteComment }) {
         </form>
       ) : (
         <div>
-            <p>{name}: {comment}</p>
+            <li>{name}: {comment}</li>
               <button onClick={toggleForm}>Edit Comment</button>
               <button onClick={handleDelete}>Delete Comment</button>
         </div>)}

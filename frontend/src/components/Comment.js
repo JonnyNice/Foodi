@@ -5,7 +5,7 @@ function Comment({ recipeId, onClick , onAddComment }) {
     const [comments, setComments] = useState(null);
 
     useEffect(() => {
-    fetch(`http://localhost:9292/comments/${recipeId}`)
+    fetch(`http://localhost:9292/recipes/${recipeId}/comments`)
         .then((response) => response.json())
         .then((comments) => {
         setComments(comments);
@@ -25,10 +25,10 @@ function Comment({ recipeId, onClick , onAddComment }) {
     return comments.map((comment) => {
         return (
             <div className='commentbox'>
-                <Link style={{color: 'white'}} to={{ pathname: '/user/', search: `${comment.username}` }} onClick={() => { onClick(comment.username); }}>
+                <Link style={{color: 'white'}} to={{ pathname: '/user/', search: `${comment.user.username}` }} onClick={() => { onClick(comment.user.username); }}>
                     <div className="link-style">
-                        <img src={comment.image} className='recProfImage' />
-                        {comment.username}</div>
+                        <img src={comment.user.image} className='recProfImage' />
+                        {comment.user.username}</div>
                 </Link>
                 <li>{comment.comment}</li>
             </div>

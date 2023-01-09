@@ -3,13 +3,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import LinkButton from './LinkButton';
+import LinkButton from '../LinkButton';
 import Typography from '@mui/material/Typography';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import "./creatorCard.css"
+import "../CSS/creatorCard.css"
 
 function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
     return (
@@ -23,11 +23,6 @@ function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
                 C
             </Avatar>
             }
-        action={
-            <IconButton aria-label="settings">
-                <MoreVertIcon />
-            </IconButton>
-          }
             title={user.username}
           subheader="September 14, 2016"
         />
@@ -44,7 +39,7 @@ function HomeCreatorCard({user, handleCreatorNameChange, ...otherProps}) {
           {user.bio}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
       <div {...otherProps}>
         <LinkButton username={user.username} onClick={handleCreatorNameChange}/>
       </div>

@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function DashRecipeForm({ username, setRecipes }) {
+function DashRecipeForm({ username, setRecipes, addRecipe }) {
     const [name, setName] = useState('');
     const [ingredients, setIngredients] = useState('');
     const [instructions, setInstructions] = useState('');
@@ -29,17 +29,13 @@ function DashRecipeForm({ username, setRecipes }) {
             fetch(`http://localhost:9292/recipes?username=${username}`)
             .then((r) => r.json())
             .then((recipes) => {
-                setRecipes([...recipes, { name, ingredients, instructions }]);
+                setRecipes(recipes);
             });
         } else {
             setMessage('Error creating recipe');
         }
         });
     };
-
-    const handleUpdateUser = async () => {
-        setFormVisible(false);
-    }
 
     return (
         <div>

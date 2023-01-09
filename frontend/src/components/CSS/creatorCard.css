@@ -6,14 +6,19 @@
 
 .willywonka {
     padding: 35px;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
     display: inline-grid;
+    
 }
 
 .home_creator_card {
-    padding: 35px;
+    padding: 10px;
     display: inline-grid;
 }
+
+.CardActions {
+    position: relative;
+  }
 
 .creator_view_recipe{
     /* width: 100%; */
@@ -25,6 +30,10 @@
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* display: flex;
+    position: relative; */
+    display: flex;
+    justify-content: center
   }
   .MuiTypography-body2 {
     color: black;

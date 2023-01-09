@@ -2,16 +2,14 @@ import '../App.css';
 import Sidenav from "./Sidenav"
 import React, { useState, useLocation } from "react";
 import { Switch, Route } from "react-router-dom";
-import Recipes from "./Recipes"
+import RecipePage from "./RecipePage"
 import Creators from "./Creators"
-import Search from "./Search"
 import About from "./About"
 import Home from "./Home"
 import UserHomePage from "./UserHomePage"
-import SHITS_BROKEN from './SHITS_BROKEN';
 import RegistrationForm from './RegistrationForm';
 import { useHistory } from 'react-router-dom';
-import RecipePage from './RecipePage';
+import RecipePageCard from './RecipePageCard';
 import LoginForm from './LoginForm';
 import Dashboard from "./Dashboard"
 import Footer from "./Footer"
@@ -37,13 +35,10 @@ function App() {
       <main>
         <Switch>
           <Route path="/recipes" >
-            <Recipes creatorName={username} />
+            <RecipePage username={username} />
           </Route>
           <Route path="/users" >
             <Creators handleCreatorNameChange={handleCreatorNameChange} />
-          </Route>
-          <Route path="/search">
-            <Search />
           </Route>
           <Route path= "/about">
             <About />
@@ -64,13 +59,12 @@ function App() {
             <UserHomePage username={username} />
           </Route>
           <Route path="/recipepage" >
-            <RecipePage onClick={handleCreatorNameChange} />
+            <RecipePageCard onClick={handleCreatorNameChange} />
           </Route>
-          <SHITS_BROKEN />
         </Switch>
-        <div>
+        {/* <div>
         <Footer />
-        </div>
+        </div> */}
         </main>
     </div>
     </>

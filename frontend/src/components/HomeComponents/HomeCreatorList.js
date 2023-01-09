@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import HomeCreatorCard from "./HomeCreatorCard"
-import "./creatorCard.css"
+import "../CSS/creatorCard.css"
 
 function HomeCreatorList({ handleCreatorNameChange }) {
 

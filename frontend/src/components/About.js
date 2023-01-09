@@ -1,6 +1,6 @@
 import React from 'react';
 import Typewriter from "typewriter-effect";
-import "./About.css"
+import "./CSS/About.css"
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
 const About = () => {

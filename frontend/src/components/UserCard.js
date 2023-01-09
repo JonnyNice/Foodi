@@ -4,8 +4,8 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import "./CSS/creatorCard.css";
-import LinkButton from './/LinkButton'
+import "../CSS/creatorCard.css";
+import LinkButton from './LinkButton'
 
 function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
   return (
@@ -25,18 +25,10 @@ function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
           {user.bio}
         </Typography>
       </CardContent>
-      <CardContent>
-      {/* <ul>
-          {user.recipes.map((recipe) => (
-            <li>{recipe.name}</li>
-          ))}
-        </ul> */}
-      </CardContent>
-      <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
+      <CardActions>
       <div {...otherProps}>
         <LinkButton username={user.username} onClick={handleCreatorNameChange}/>
       </div>
-        {/* <Button size="small">Learn More</Button> */}
       </CardActions>
     </Card>
     </div>

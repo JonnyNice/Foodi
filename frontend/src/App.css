@@ -18,7 +18,7 @@ code {
   text-align: center;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -30,7 +30,7 @@ code {
   height: 100%;
   width: 100%;
   z-index: 1;
-}
+} */
 
 .collapse {
   display: flex;
@@ -41,15 +41,14 @@ main {
   padding: 10px;
   }
 
-.middle-section{
-  display: flex;
-  flex-direction: column;
-  background-color: #181a1b;
-  padding: 20px;
-  color: white;
-  border-radius: 20px;
-
-}
+  .middle-section{
+    background-color: #181a1b;
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
 
 .bottom-section{
   display: flex;
@@ -83,7 +82,7 @@ main {
 
 .userHomePage {
   position: absolute;
-  top: 55%;
+  top: 63%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -92,6 +91,11 @@ main {
 
 .userText {
   text-align: center;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
 }
 
 .spacer2 {
@@ -101,3 +105,19 @@ main {
 link {
   color: red;
 }
+
+button {
+  cursor: pointer;
+}
+
+.dash__content {
+  flex-direction: column;
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+}
+
+
+/* # recipeapp
+color pallete: #DAD7CD, #A3B18A, #588157, #3A5A40, #344E41 -green/grey */

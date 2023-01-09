@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './formstyle.css'
+import './CSS/formstyle.css'
 
 function RegistrationForm({handleDash}) {
 
@@ -11,7 +11,6 @@ function RegistrationForm({handleDash}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //@@test@@
         if (password !== confirmPassword) {
           setMessage('Passwords do not match');
           return

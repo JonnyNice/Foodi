@@ -1,12 +1,12 @@
 import RecipeCard from "./RecipeCard";
 import { useState, useEffect } from "react"
-import { useLocation } from 'react-router-dom'
+import '../CSS/App.css'
 
 function RecipeList({ user }) {
 
   const [recipes, setRecipes] = useState([])
 
-   useEffect(() => {
+    useEffect(() => {
     if (!user) {
       fetch("http://localhost:9292/recipes")
         .then((r) => r.json())
@@ -18,14 +18,14 @@ function RecipeList({ user }) {
     }
   }, [user]);
 
-  // const addRecipe = (recipe) => {
-  //   setRecipes([...recipes, recipe]);
-  // };
-
   return(
-    <div className="dash__content" >{recipes.map(recipe => {
-      return <RecipeCard recipe={recipe} key={recipe.id} />
+    <div className="container4">
+        <h1>All Recipes: </h1>
+        <div className="container5">
+        {recipes.map(recipe => {
+        return <RecipeCard recipe={recipe} key={recipe.id} />
     })}</div>
+    </div>
   )
 }
 

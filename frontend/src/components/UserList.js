@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import CreatorCard from "./CreatorCard"
-import "./CSS/creatorCard.css"
+import CreatorCard from "./UserCard"
+import "../CSS/creatorCard.css"
 
 function CreatorList({ handleCreatorNameChange }) {
 
@@ -16,13 +16,10 @@ function CreatorList({ handleCreatorNameChange }) {
     return <p>No users found</p>;
   }
   return (
-    <div>
-      <h1>Foodies: </h1>
-        <div className="dash__content">
+    <div className="container2" >
         {users.map(user => {
         return <CreatorCard className="willywonka" key={user.username} user={user} username={user.usernamename} handleCreatorNameChange={handleCreatorNameChange} />
     })}
-      </div>
     </div>
   )
 }

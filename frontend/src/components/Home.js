@@ -1,8 +1,8 @@
-import HomeRecipeList from './HomeRecipeList';
+import HomeRecipeList from './HomeComponents/HomeRecipeList';
 import React from 'react'
-import HomeCreatorList from './HomeCreatorList'
-import homepic from "./pictures/homepic.jpg";
-import "./home.css";
+import HomeCreatorList from './HomeComponents/HomeCreatorList'
+import homepic from "./*Pictures/homepic.jpg";
+import "./CSS/home.css";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 
 const Home = ({ handleCreatorNameChange }) => {
@@ -23,7 +23,8 @@ const Home = ({ handleCreatorNameChange }) => {
           <RestaurantMenuIcon fontSize='small'/>
           <RestaurantMenuIcon fontSize='small'/>
       </div>
-        <div className="middle-section">Featured Recipes
+        <div className="middle-section">
+          <h1>Featured Recipes</h1>
           <HomeRecipeList />
         </div>
         <div className='spacer2'>
@@ -36,7 +37,8 @@ const Home = ({ handleCreatorNameChange }) => {
           <RestaurantMenuIcon fontSize='small'/>
           <RestaurantMenuIcon fontSize='small'/>
         </div>
-        <div className="bottom-section">Featured Foodies
+        <div className="bottom-section">
+          <h1>Featured Foodies</h1>
           <HomeCreatorList handleCreatorNameChange={handleCreatorNameChange} />
         </div>
       </div>

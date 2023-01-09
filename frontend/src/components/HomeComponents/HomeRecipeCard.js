@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import { red, grey, green } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from 'react-router-dom';
-import "./recipeCard.css"
+import "../CSS/recipeCard.css"
 
 function HomeRecipeCard({recipe}) {
 
@@ -22,11 +22,6 @@ function HomeRecipeCard({recipe}) {
                     R
                 </Avatar>
             }
-        action={
-            <IconButton aria-label="settings">
-                <MoreVertIcon />
-            </IconButton>
-        }
             title={recipe.name}
             subheader={`Created By: ${recipe.user.username}`}
         />
@@ -38,7 +33,7 @@ function HomeRecipeCard({recipe}) {
             />
         <CardContent>
             </CardContent>
-        <CardActions disableSpacing>
+        <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
         <Link to={`/recipepage?id=${recipe.id}`}>
                 <button className="creator_view_recipe">View Recipe</button>
             </Link>

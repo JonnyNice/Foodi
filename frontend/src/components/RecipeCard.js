@@ -9,12 +9,11 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red, grey } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import "./recipeCard.css"
+import "./CSS/recipeCard.css"
 import { Link } from 'react-router-dom';
 
 
@@ -46,11 +45,6 @@ function RecipeCard({recipe}) {
               R
             </Avatar>
           }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
           title={recipe.name}
           subheader={`created by: ${recipe.user.username}`}
         />
@@ -68,12 +62,9 @@ function RecipeCard({recipe}) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
+          {/* <IconButton aria-label="add to favorites">
             <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
+          </IconButton> */}
             <Link to={`/recipepage?id=${recipe.id}`}>
               <button className="creator_view_recipe">View Recipe</button>
             </Link>

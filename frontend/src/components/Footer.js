@@ -1,4 +1,4 @@
-import './Footer.css'
+import './CSS/Footer.css'
 import {Link} from "react-router-dom"
 
 import React from 'react'

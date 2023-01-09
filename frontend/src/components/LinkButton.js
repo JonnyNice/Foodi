@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './recipeCard.css'
+import './CSS/recipeCard.css'
 
 const LinkButton = (props) => {
   const { username, onClick, ...otherProps } = props;
