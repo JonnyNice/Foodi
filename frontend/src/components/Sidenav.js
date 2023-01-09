@@ -12,38 +12,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-// ***** ORIGINAL CODE *****
-// const NavBar = () => {
-//   return (
-//     <div className="navBar">
-//       <NavLink id="first_item" to="/" exact>
-//         RecipeApp🎂
-//       </NavLink>
-//       <NavLink className="navItem" to="/search" exact>
-//         Search
-//       </NavLink>
-//       <NavLink className="navItem" to="/recipes" exact>
-//         Recipes
-//       </NavLink>
-//       <NavLink className="navItem" to="/creators" exact>
-//         Creators
-//       </NavLink>
-//       <NavLink className="navItem" to="/about" exact>
-//         About
-//       </NavLink>
-//     </div>
-//   )
-// }
-
-// export default NavBar;
-// ***** ORIGINAL CODE *****
-
-
-
-
-
-
-// ***** TEST CODE, WORKING *****
 
 export default function NavBar() {
 
