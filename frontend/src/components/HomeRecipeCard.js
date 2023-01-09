@@ -40,7 +40,7 @@ function HomeRecipeCard({recipe}) {
             </CardContent>
         <CardActions disableSpacing>
         <Link to={`/recipepage?id=${recipe.id}`}>
-              <button className="creator_view_recipe">View Recipe</button>
+                <button className="creator_view_recipe">View Recipe</button>
             </Link>
         </CardActions>
     </Card>

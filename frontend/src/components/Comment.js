@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function Comment({ recipeId, onClick }) {
+function Comment({ recipeId, onClick , onAddComment }) {
     const [comments, setComments] = useState(null);
 
     useEffect(() => {
@@ -11,7 +11,7 @@ function Comment({ recipeId, onClick }) {
         setComments(comments);
         }
     )
-    }, [recipeId])
+    }, [recipeId, onAddComment])
 
     const renderComments = () => {
     if (!comments) {
@@ -25,7 +25,7 @@ function Comment({ recipeId, onClick }) {
     return comments.map((comment) => {
         return (
             <div className='commentbox'>
-                <Link to={{ pathname: '/user/', search: `${comment.username}` }} onClick={() => { onClick(comment.username); }}>
+                <Link style={{color: 'white'}} to={{ pathname: '/user/', search: `${comment.username}` }} onClick={() => { onClick(comment.username); }}>
                     <div className="link-style">
                         <img src={comment.image} className='recProfImage' />
                         {comment.username}</div>
