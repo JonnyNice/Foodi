@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './formstyle.css'
 
 function LoginForm({handleDashName}) {
 
@@ -42,7 +43,7 @@ function LoginForm({handleDashName}) {
 
   return (
      // *****TESTING*****
-     <>
+     <div className='formpad'>
       {message && <p>{message}</p>}
     <form onClick={handleSubmit}>
       <label htmlFor="emailOrUsername">
@@ -67,7 +68,19 @@ function LoginForm({handleDashName}) {
       <br />
       <button type="submit">Log in</button>
     </form>
-    </>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p style={{ color: '#588157' }}>-----</p>
+    </div>
   );
 }
 
