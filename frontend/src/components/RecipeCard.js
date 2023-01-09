@@ -38,13 +38,18 @@ function RecipeCard({recipe}) {
 
     return (
         <div className="recipe_container">
-      <Card sx={{ maxWidth: 345, bgcolor: '#DAD7CD' }}>
+      <Card sx={{ maxWidth: 345, bgcolor: '#DAD7CD', paddingLeft:2, paddingRight:2, borderRadius: 5 }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: '#A3B18A' }} aria-label="recipe">
               R
             </Avatar>
           }
+          // action={
+          //   <IconButton aria-label="settings">
+          //     <MoreVertIcon />
+          //   </IconButton>
+          // }
           title={recipe.name}
           subheader={`created by: ${recipe.user.username}`}
         />

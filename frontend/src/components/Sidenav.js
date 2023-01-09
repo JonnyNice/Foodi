@@ -33,7 +33,7 @@ export default function NavBar() {
             <Link className={styles.sideitem}href="https://www.facebook.com/" target="_blank">
               <FacebookIcon sx={{ color: "#3b5998" }}/>
             </Link>
-            <Link className={styles.sideitem}href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+            <Link className={styles.sideitem}href="https://www.youtube.com/watch?v=Whm94pH53yE" target="_blank">
               <YouTubeIcon sx={{ color: "#FF0000" }}/>
             </Link>
             <Link className={styles.sideitem}href="https://www.instagram.com" target="_blank">

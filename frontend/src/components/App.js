@@ -12,7 +12,7 @@ import { useHistory } from 'react-router-dom';
 import RecipePageCard from './RecipePageCard';
 import LoginForm from './LoginForm';
 import Dashboard from "./Dashboard"
-import Footer from "./Footer"
+
 
 function App() {
   const history = useHistory();
@@ -62,9 +62,6 @@ function App() {
             <RecipePageCard onClick={handleCreatorNameChange} />
           </Route>
         </Switch>
-        {/* <div>
-        <Footer />
-        </div> */}
         </main>
     </div>
     </>

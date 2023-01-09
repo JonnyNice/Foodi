@@ -10,10 +10,10 @@ import LinkButton from './/LinkButton'
 function CreatorCard({ user, handleCreatorNameChange, ...otherProps}) {
   return (
     <div className="willywonka">
-    <Card className="anotherone" sx={{ maxWidth: 400, bgcolor: "#DAD7CD" }}>
+    <Card className="anotherone" sx={{ maxWidth: 400, bgcolor: "#DAD7CD", paddingLeft:2, paddingRight:2, borderRadius: 5 }}>
       <CardMedia
         component="img"
-        sx={{ height: 150 }}
+        sx={{ height: 150, paddingTop: 1 }}
         src={user.image}
         title={user.username}
       />

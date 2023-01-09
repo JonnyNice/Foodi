@@ -1,10 +1,10 @@
 .sidenav {
     width: 210px;
     transition: width 0.4s ease-in-out;
-    height: relative;
+    /* height: relative; */
     background-color: #344E41;
     padding-top: 28px;
-    position: sticky;
+    position: relative;
     z-index: 2;
 }
 .sidenavClosed {
@@ -12,7 +12,8 @@
     transition: width 0.2s ease-in-out;
     width: 60px;
     z-index: 2;
-    position: relative;
+    position: sticky;
+    
 }
 
 .sideitem {
@@ -35,7 +36,7 @@
 }
 
 .sideitem:hover {
-    background-color: #244f7d1c;
+    background-color: brown;
 
 }
 .menuBtn {
@@ -48,5 +49,6 @@
     cursor: pointer;
     padding-left: 20px;
 }
+
 
 
