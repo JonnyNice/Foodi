@@ -1,4 +1,10 @@
-Foodi is a recipe sharing and discussion app.
+Foodi is a recipe sharing and discussion application, built with ruby on rails with a react front-end.
+
+This application can be viewed by running the following commands:
+
+    Run 'rails s' to start the server.
+
+    In another terminal, run 'npm i && npm start' to start the client
 
 Visit our Home Page to see out featured recipes and featured foodies, or chefs.
 

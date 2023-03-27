@@ -13,7 +13,6 @@
     width: 60px;
     z-index: 2;
     position: sticky;
-    
 }
 
 .sideitem {
@@ -41,7 +40,7 @@
 }
 .menuBtn {
     align-self: center;
-    align-self: flex-start;  
+    align-self: flex-start;
     justify-self: flex-end;
     color: white;
     background-color: transparent;
